@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 683" role="img" aria-labelledby="title desc">
+  <title id="title">AAPPLIFY</title>
+  <desc id="desc">AAPPLIFY wordmark with cyan and violet A symbol on a dark navy background.</desc>
+  <defs>
+    <radialGradient id="bg" cx="48%" cy="48%" r="78%">
+      <stop offset="0" stop-color="#071d45"/>
+      <stop offset="0.58" stop-color="#031533"/>
+      <stop offset="1" stop-color="#000817"/>
+    </radialGradient>
+    <linearGradient id="legLeft" x1="274" y1="151" x2="210" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#16f3de"/>
+      <stop offset="0.48" stop-color="#13bed8"/>
+      <stop offset="1" stop-color="#2476dc"/>
+    </linearGradient>
+    <linearGradient id="legRight" x1="315" y1="151" x2="464" y2="506" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#21f4df"/>
+      <stop offset="0.44" stop-color="#16c8df"/>
+      <stop offset="1" stop-color="#2478e8"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="164" y1="457" x2="501" y2="468" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7962ff"/>
+      <stop offset="0.44" stop-color="#4c59ff"/>
+      <stop offset="1" stop-color="#8c4dff"/>
+    </linearGradient>
+    <linearGradient id="fold" x1="264" y1="393" x2="339" y2="489" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#06122b" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#020714" stop-opacity="0.72"/>
+    </linearGradient>
+    <filter id="markGlow" x="-18%" y="-18%" width="136%" height="136%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.05 0 0 0 0 0.75 0 0 0 0 1 0 0 0 0.28 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="textSoft" x="-3%" y="-10%" width="106%" height="120%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.6" flood-color="#ffffff" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <rect width="2048" height="683" fill="url(#bg)"/>
+  <g filter="url(#markGlow)">
+    <path d="M151 467 271 206c13-29 35-44 65-44 29 0 52 15 65 44l119 261c12 28-8 59-38 59-17 0-32-10-39-26L336 264 228 500c-8 18-25 28-44 28-30 0-46-32-33-61Z" fill="url(#legLeft)"/>
+    <path d="M336 264 443 500c7 16 22 26 39 26 30 0 50-31 38-59L401 206c-13-29-36-44-65-44v102Z" fill="url(#legRight)" opacity="0.98"/>
+    <path d="M154 469c50-48 110-72 181-72 72 0 133 24 183 72 21 20 16 54-9 69-18 11-42 8-57-7-31-30-70-45-117-45-46 0-85 15-116 45-16 15-39 18-58 7-24-15-29-49-7-69Z" fill="url(#bar)"/>
+    <path d="M237 400c30-7 62-10 98-10 44 0 83 7 116 22l-72 24c-35-7-70-7-107-1l-35-35Z" fill="url(#fold)"/>
+    <path d="M336 264 278 391c19-4 38-6 58-6 20 0 40 2 59 6l-59-127Z" fill="#03102b" opacity="0.74"/>
+  </g>
+  <text x="647" y="419" fill="#f8fbff" filter="url(#textSoft)"
+        font-family="Arial, Helvetica, sans-serif" font-size="171" font-weight="800"
+        letter-spacing="22">AAPPLIFY</text>
+</svg>

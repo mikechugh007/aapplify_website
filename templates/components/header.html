@@ -1,0 +1,129 @@
+{% load plugin_tags %}
+{% load static %}
+{% get_last_plugin as last_plugin %}
+
+<nav class="border-b border-primary_c sticky top-0 z-50 bg-white">
+    <div class="container z-20">
+        <div class="flex items-center justify-between h-24">
+            <div class="flex items-center justify-center gap-12">
+                <a class="logo capitalize text-3xl font-extrabold tracking-wide" href="{% url 'main_home' %}">
+                    <div class="w-44 max-w-[44vw]">
+                        <img class="w-full" src="{% static 'assets/images/company_logo/aapplify_logo.svg' %}" alt="AAPPLIFY">
+                    </div>
+                </a>
+                <div class="hidden lg:flex items-center top-menu gap-8">
+                    <a href="{% url 'main_home' %}#product" class="menu-label">Product</a>
+                    <div class="group relative flex items-center">
+                        <a href="{% url 'landing_aapplify' %}" class="menu-label">Control Plane</a>
+                        <div class="dropdown cp-dropdown absolute left-0 top-full mt-2 w-[720px] shadow-xl rounded-lg z-50">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-6">
+                                <a href="{% url 'landing_aapplify' %}" class="cp-dropdown-link block p-3 rounded-lg transition">
+                                    <h3 class="font-bold text-primary_c">Overview</h3>
+                                    <p class="text-sm text-gray-700">Enterprise control plane for identity, change, data, and security.</p>
+                                </a>
+                                <a href="{% url 'landing_identity' %}" class="cp-dropdown-link block p-3 rounded-lg transition">
+                                    <h3 class="font-bold text-primary_c">Identity Access Risk</h3>
+                                    <p class="text-sm text-gray-700">Privilege drift, service accounts, stale access, and access reviews.</p>
+                                </a>
+                                <a href="{% url 'landing_release_readiness' %}" class="cp-dropdown-link block p-3 rounded-lg transition">
+                                    <h3 class="font-bold text-primary_c">Change / Release Readiness</h3>
+                                    <p class="text-sm text-gray-700">Approve, hold, or investigate risky production change.</p>
+                                </a>
+                                <a href="{% url 'landing_data' %}" class="cp-dropdown-link block p-3 rounded-lg transition">
+                                    <h3 class="font-bold text-primary_c">Data Policy Context</h3>
+                                    <p class="text-sm text-gray-700">Sensitive data movement, policy files, lineage, and controls.</p>
+                                </a>
+                                <a href="{% url 'landing_security' %}" class="cp-dropdown-link block p-3 rounded-lg transition md:col-span-2">
+                                    <h3 class="font-bold text-primary_c">Security Exposure Paths</h3>
+                                    <p class="text-sm text-gray-700">Findings, posture gaps, remediation workflows, and evidence.</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="{% url 'main_about' %}" class="menu-label">About</a>
+                    <a href="{% url 'main_faq' %}" class="menu-label">FAQ</a>
+                </div>
+            </div>
+
+            <button id="toggleButton" type="button" class="lg:hidden block hamburger_menu">
+                <img class="inline" id="openIcon" src="{% static 'assets/openmenu.svg' %}" alt="Open menu">
+                <img class="hidden" id="closeIcon" src="{% static 'assets/closemenu.svg' %}" alt="Close menu">
+            </button>
+
+            <div class="lg:flex items-center gap-5 hidden">
+            {% if user.is_authenticated %}
+                <div class="flex gap-8 items-center justify-center">
+                    <div class="relative inline-block text-left">
+                        <div>
+                          <button type="button" class="inline-flex justify-center gap-x-1.5 text-sm font-semibold text-gray-900 hover:bg-gray-50 w-10" id="menu-button" aria-expanded="true" aria-haspopup="true">
+                            {% if user.username %}
+                              <p class="font-bold capitalize text-blue-500 text-xl">{{ user.username }}</p>
+                            {% else %}
+                              <img src="{% static 'assets/icons/profile.svg' %}" alt="Profile">
+                            {% endif %}
+                          </button>
+                        </div>
+
+                        <div class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                          <div class="py-1" role="none">
+                            <a href="{% url 'main_profile' %}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Profile</a>
+                            <a href="{% url 'main_token' %}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Tickets</a>
+                            <a href="{% url 'add_blog' %}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Add Blog</a>
+                            {% if last_plugin %}
+                            <a href="{{ last_plugin.file.url }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Download</a>
+                            {% endif %}
+                            <hr>
+                            <a class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" href="{% url 'auth_logout' %}">Logout</a>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="{% url 'request_demo' %}" class="bg-blue-800 rounded-lg text-white py-3 px-6">Book a demo</a>
+            {% else %}
+                <a href="{% url 'request_demo' %}" class="bg-blue-800 rounded-lg text-white py-3 px-6">Book a demo</a>
+            {% endif %}
+            </div>
+
+            <nav id="mobileMenu" class="fixed h-screen w-96 top-0 right-0 transition-all delay-100 duration-500 border-l border-black translate-x-96 bg-white">
+                <button id="closeSide" type="button" class="hamburger_menu flex justify-center items-center w-full py-5">
+                    <img class="border rounded-full p-1 border-black" src="{% static 'assets/closemenu.svg' %}" alt="Close menu">
+                </button>
+                <ul class="py-4 px-10 grid gap-3 font-semibold text-black">
+                    <li><a href="{% url 'main_home' %}">Home</a></li>
+                    <li><a href="{% url 'main_home' %}#product">Product</a></li>
+                    <li><a href="{% url 'landing_aapplify' %}">Control Plane</a></li>
+                    <li class="grid gap-2 pl-3 border-l border-gray-200 text-sm">
+                        <a href="{% url 'landing_identity' %}">Identity access risk</a>
+                        <a href="{% url 'landing_release_readiness' %}">Change / release readiness</a>
+                        <a href="{% url 'landing_data' %}">Data policy context</a>
+                        <a href="{% url 'landing_security' %}">Security exposure paths</a>
+                    </li>
+                    <li><a href="{% url 'main_about' %}">About</a></li>
+                    <li><a href="{% url 'main_faq' %}">FAQ</a></li>
+                    <li><a href="{% url 'request_demo' %}">Book a demo</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'main_profile' %}" class="block px-4 py-2 text-sm text-gray-700">Profile</a></li>
+                    <li><a href="{% url 'main_token' %}" class="block px-4 py-2 text-sm text-gray-700">Tickets</a></li>
+                    <li><a href="{% url 'add_blog' %}" class="block px-4 py-2 text-sm text-gray-700">Add Blog</a></li>
+                    {% if last_plugin %}
+                    <li><a href="{{ last_plugin.file.url }}" class="block px-4 py-2 text-sm text-gray-700">Download</a></li>
+                    {% endif %}
+                    <li><hr></li>
+                    <li><a href="{% url 'auth_logout' %}">Logout</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+<style>
+    .top-menu .group .cp-dropdown {
+        border: 1px solid rgba(125, 140, 210, 0.24);
+        background: rgba(13, 17, 32, 0.98);
+    }
+    .top-menu .cp-dropdown-link:hover,
+    .top-menu .cp-dropdown-link:focus {
+        background: rgba(24, 30, 54, 0.9);
+    }
+</style>

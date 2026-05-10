@@ -1,0 +1,63 @@
+{% load static %}
+
+<section class="bg-[#F7F6F2]">
+    <div class="container py-36">
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-10 pt-12">
+            {% for service in services %}
+            <div class="">
+                <div class="w-full h-96 pb-8">
+                    <img class="w-full rounded-lg h-full object-cover object-center" src="{{ service.thumbnail_img.url }}" alt="{{ service.title }}">
+                </div>
+                <h1 class="text-2xl font-semibold">{{ service.title }}</h1>
+                <p class="text-lg pb-4">
+                    {{ service.short_description }}
+                </p>
+                <a class="cursor-pointer" href="{% url 'service-detail' service.id %}">
+                    <button class="w-full py-3 bg-blue-800 text-white rounded-lg text-xl">Buy service</button>
+                </a>
+            </div>
+            {% endfor %}
+
+            {% comment %} <div class="">
+                <div class="w-full h-96 pb-8">
+                    <img class="w-full rounded-lg h-full object-cover object-center" src="{% static 'assets/images/intro4.webp' %}" alt="">
+                </div>
+                <h1 class="text-2xl font-semibold">Custom AI Solutions</h1>
+                <p class="text-lg pb-4">
+                    We develop tailored AI solutions to meet your business needs and boost efficiency.
+                </p>
+                <button class="w-full py-3 bg-blue-800 text-white rounded-lg text-xl">Buy service</button>
+            </div>
+            <div class="">
+                <div class="w-full h-96 pb-8">
+                    <img class="w-full rounded-lg h-full object-cover object-center" src="{% static 'assets/images/intro3.webp' %}" alt="">
+                </div>
+                <h1 class="text-2xl font-semibold">Data Analytics Insights</h1>
+                <p class="text-lg pb-4">
+                    Our team provides deep data insights to help you make informed business decisions.
+                </p>
+                <button class="w-full py-3 bg-blue-800 text-white rounded-lg text-xl">Buy service</button>
+            </div>
+            <div class="">
+                <div class="w-full h-96 pb-8">
+                    <img class="w-full rounded-lg h-full object-cover object-center" src="{% static 'assets/images/intro2.webp' %}" alt="">
+                </div>
+                <h1 class="text-2xl font-semibold">AI Training Programs</h1>
+                <p class="text-lg pb-4">
+                    We offer comprehensive AI training programs to upskill your team effectively.
+                </p>
+                <button class="w-full py-3 bg-blue-800 text-white rounded-lg text-xl">Buy service</button>
+            </div>
+            <div class="">
+                <div class="w-full h-96 pb-8">
+                    <img class="w-full rounded-lg h-full object-cover object-center" src="{% static 'assets/images/intro1.webp' %}" alt="">
+                </div>
+                <h1 class="text-2xl font-semibold">AI Integration Support</h1>
+                <p class="text-lg pb-4">
+                    We assist with the seamless integration of AI technologies into your existing systems.
+                </p>
+                <button class="w-full py-3 bg-blue-800 text-white rounded-lg text-xl">Buy service</button>
+            </div> {% endcomment %}
+        </div>
+    </div>
+</section>

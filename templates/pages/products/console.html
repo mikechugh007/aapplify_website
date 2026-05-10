@@ -1,0 +1,99 @@
+{% extends 'mainbase.html' %}
+{% block content %}
+<section class="py-16 bg-gradient-to-br from-blue-50 to-white">
+  <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+    <div class="md:w-1/2">
+      <h1 class="text-5xl font-extrabold text-blue-900 mb-4">Monitor, manage, and optimize.<span class="text-primary_c"> All in one place.</span></h1>
+      <p class="text-xl text-gray-700 mb-6">
+        <span class="font-bold text-primary_c">AAPPLIFY Console</span> is your unified command center. It brings together monitoring, workflow tracing, and automation management across your entire stack. Console uses AI to surface insights, track performance, and simplify operations for every team.
+      </p>
+      <div class="flex gap-4 mb-8">
+        <a href="{% url 'request_demo' %}" class="bg-blue-800 text-white px-8 py-3 rounded-lg font-bold text-lg shadow hover:bg-blue-900 transition">Book a demo</a>
+        <a href="#features" class="border-2 border-blue-800 text-blue-800 px-8 py-3 rounded-lg font-bold text-lg hover:bg-blue-50 transition">View features</a>
+      </div>
+      <ul class="list-disc pl-6 text-lg text-gray-800 space-y-2">
+        <li>Unified monitoring dashboard</li>
+        <li>Workflow tracing and analytics</li>
+        <li>Automation management</li>
+        <li>AI-powered insights</li>
+      </ul>
+    </div>
+    <div class="md:w-1/2 flex flex-col items-center">
+      <!-- Product-themed SVG illustration: Console dashboard -->
+      <div class="w-full max-w-md mb-6 animate-fade-in">
+        <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+          <rect x="0" y="0" width="400" height="300" rx="32" fill="#e0f2fe"/>
+          <!-- Dashboard -->
+          <rect x="60" y="80" width="280" height="140" rx="24" fill="#2563eb"/>
+          <rect x="80" y="110" width="80" height="40" rx="8" fill="#22d3ee"/>
+          <rect x="200" y="110" width="80" height="40" rx="8" fill="#f59e42"/>
+          <rect x="140" y="170" width="120" height="30" rx="8" fill="#0ea5e9"/>
+          <text x="200" y="150" text-anchor="middle" fill="#fff" font-size="22" font-weight="bold">Console</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-white border-t">
+  <div class="container mx-auto px-4 max-w-4xl">
+    <h2 class="text-3xl font-bold text-primary_c mb-4">What is Console?</h2>
+    <p class="text-lg text-gray-700 mb-6">
+      <span class="font-bold text-primary_c">AAPPLIFY Console</span> leverages AI and ML to unify your monitoring, workflow tracing, and automation management. It provides real-time insights, performance tracking, and operational control for every team.
+    </p>
+    <div class="flex flex-col md:flex-row gap-8 items-center">
+      <!-- Product Vision SVG: Unified dashboard -->
+      <div class="w-full max-w-xs animate-fade-in">
+        <svg viewBox="0 0 300 220" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+          <rect x="0" y="0" width="300" height="220" rx="24" fill="#e0f2fe"/>
+          <!-- Dashboard -->
+          <rect x="40" y="60" width="220" height="100" rx="16" fill="#2563eb"/>
+          <rect x="60" y="90" width="60" height="30" rx="6" fill="#22d3ee"/>
+          <rect x="160" y="90" width="60" height="30" rx="6" fill="#f59e42"/>
+          <rect x="110" y="140" width="80" height="20" rx="6" fill="#0ea5e9"/>
+          <text x="150" y="120" text-anchor="middle" fill="#fff" font-size="18" font-weight="bold">Console</text>
+        </svg>
+      </div>
+      <ul class="list-disc pl-6 text-lg text-gray-800 space-y-2">
+        <li>Real-time monitoring and analytics</li>
+        <li>Workflow tracing and visualization</li>
+        <li>Automation management and control</li>
+        <li>AI-driven operational insights</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="py-16 bg-blue-50 border-t">
+  <div class="container mx-auto px-4 max-w-4xl">
+    <h2 class="text-2xl font-bold text-blue-900 mb-6">Key Features</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828806.png" alt="Monitoring" class="w-16 h-16 mb-4" />
+        <h3 class="font-bold text-lg mb-2">Monitoring</h3>
+        <p class="text-gray-600 text-center">Unified dashboard for signals, workflows, and automations.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828822.png" alt="Tracing" class="w-16 h-16 mb-4" />
+        <h3 class="font-bold text-lg mb-2">Tracing</h3>
+        <p class="text-gray-600 text-center">Visualize and analyze workflow execution and dependencies.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828830.png" alt="Automation" class="w-16 h-16 mb-4" />
+        <h3 class="font-bold text-lg mb-2">Automation</h3>
+        <p class="text-gray-600 text-center">Manage, trigger, and optimize automations from one place.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+.animate-fade-in {
+  animation: fade-in 1.2s ease;
+}
+</style>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends 'mainbase.html' %}
+{% block content %}
+<section class="py-16 bg-gradient-to-br from-yellow-50 to-white">
+  <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+    <div class="md:w-1/2">
+      <h1 class="text-5xl font-extrabold text-yellow-900 mb-4">Secure, govern, and audit.<span class="text-primary_c"> With confidence.</span></h1>
+      <p class="text-xl text-gray-700 mb-6">
+        <span class="font-bold text-primary_c">AAPPLIFY Guard</span> is your AI-powered governance layer. It provides robust RBAC, audit logs, and policy controls to keep every automation secure, compliant, and review-ready. Guard uses ML to detect suspicious activity, enforce policies, and simplify compliance for your team.
+      </p>
+      <div class="flex gap-4 mb-8">
+        <a href="{% url 'request_demo' %}" class="bg-yellow-800 text-white px-8 py-3 rounded-lg font-bold text-lg shadow hover:bg-yellow-900 transition">Book a demo</a>
+        <a href="#features" class="border-2 border-yellow-800 text-yellow-800 px-8 py-3 rounded-lg font-bold text-lg hover:bg-yellow-50 transition">View features</a>
+      </div>
+      <ul class="list-disc pl-6 text-lg text-gray-800 space-y-2">
+        <li>Role-based access control (RBAC)</li>
+        <li>Comprehensive audit logging</li>
+        <li>Policy enforcement and compliance</li>
+        <li>ML-powered anomaly detection</li>
+      </ul>
+    </div>
+    <div class="md:w-1/2 flex flex-col items-center">
+      <!-- Product-themed SVG illustration: Guard governance and security -->
+      <div class="w-full max-w-md mb-6 animate-fade-in">
+        <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+          <rect x="0" y="0" width="400" height="300" rx="32" fill="#fef9c3"/>
+          <!-- Shield -->
+          <ellipse cx="200" cy="150" rx="80" ry="100" fill="#fde047"/>
+          <path d="M200 80 Q220 120 200 220 Q180 120 200 80" fill="#f59e42"/>
+          <text x="200" y="160" text-anchor="middle" fill="#fff" font-size="22" font-weight="bold">Guard</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-white border-t">
+  <div class="container mx-auto px-4 max-w-4xl">
+    <h2 class="text-3xl font-bold text-primary_c mb-4">What is Guard?</h2>
+    <p class="text-lg text-gray-700 mb-6">
+      <span class="font-bold text-primary_c">AAPPLIFY Guard</span> leverages AI and ML to secure your automations, enforce policies, and simplify compliance. It provides real-time monitoring, audit trails, and automated enforcement so you can operate with confidence.
+    </p>
+    <div class="flex flex-col md:flex-row gap-8 items-center">
+      <!-- Product Vision SVG: Security and governance -->
+      <div class="w-full max-w-xs animate-fade-in">
+        <svg viewBox="0 0 300 220" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+          <rect x="0" y="0" width="300" height="220" rx="24" fill="#fef9c3"/>
+          <!-- Shield -->
+          <ellipse cx="150" cy="110" rx="60" ry="80" fill="#fde047"/>
+          <path d="M150 50 Q170 90 150 190 Q130 90 150 50" fill="#f59e42"/>
+          <text x="150" y="120" text-anchor="middle" fill="#fff" font-size="18" font-weight="bold">Guard</text>
+        </svg>
+      </div>
+      <ul class="list-disc pl-6 text-lg text-gray-800 space-y-2">
+        <li>Real-time policy enforcement</li>
+        <li>Automated compliance checks</li>
+        <li>Audit trails and reporting</li>
+        <li>ML-based threat detection</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="py-16 bg-yellow-50 border-t">
+  <div class="container mx-auto px-4 max-w-4xl">
+    <h2 class="text-2xl font-bold text-yellow-900 mb-6">Key Features</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828801.png" alt="RBAC" class="w-16 h-16 mb-4" />
+        <h3 class="font-bold text-lg mb-2">RBAC</h3>
+        <p class="text-gray-600 text-center">Granular role-based access control for all automations.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828826.png" alt="Audit Logs" class="w-16 h-16 mb-4" />
+        <h3 class="font-bold text-lg mb-2">Audit Logs</h3>
+        <p class="text-gray-600 text-center">Comprehensive logging and reporting for compliance.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828832.png" alt="Policy Enforcement" class="w-16 h-16 mb-4" />
+        <h3 class="font-bold text-lg mb-2">Policy Enforcement</h3>
+        <p class="text-gray-600 text-center">Automated enforcement of security and compliance policies.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+.animate-fade-in {
+  animation: fade-in 1.2s ease;
+}
+</style>
+{% endblock %}

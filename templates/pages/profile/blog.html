@@ -1,0 +1,41 @@
+{% load static %}
+{% load static thumbnail %}
+
+<section id="user-blogs" class="container">
+    <h2 class="text-5xl font-bold mb-8">My Blog Posts</h2>
+    <div class="grid xl:grid-cols-3 md:grid-cols-2 gap-10 pt-12">
+        {% for blog in blogs %}
+        <div class="border">
+            <div class="w-full h-96 pb-8">
+                {% thumbnail blog.thumbnail "300x300" crop="center" as im %}
+                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                {% endthumbnail %}
+
+            </div>
+            <div class="p-8">
+                <h2 class="text-2xl font-semibold">{{ blog.title }}</h2>
+                <p class="text-lg pb-4">{{ blog.body|truncatewords:30|safe }}</p>
+                <p><strong>Created By:</strong> {{ blog.created_by.username }}</p>
+                <p><strong>Published At:</strong> {{ blog.published_at }}</p>
+                <div class="py-3"></div>
+                <a class="bg-orange-400 py-3 px-6" href="{% url 'blog-detail' blog.id %}">Read More</a>
+                {% comment %} <div class="pt-6 flex gap-8 items-center">
+                    <a href="" class="block">
+                        <div class="w-8">
+                            <img src="{% static 'assets/icons/delete.svg' %}" alt="">
+                        </div>
+                    </a>
+                    <a href="" class="block">
+                        <div class="w-8">
+                            <img src="{% static 'assets/icons/edit.svg' %}" alt="">
+                        </div>
+                    </a>
+                </div> {% endcomment %}
+            </div>
+            {% comment %} <a href="{% url 'blog_detail' blog.slug %}">Read More</a> {% endcomment %}
+        </div>
+        {% empty %}
+            <p>No blog posts available.</p>
+        {% endfor %}
+    </div>
+</section>
