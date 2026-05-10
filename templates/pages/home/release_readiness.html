@@ -1,0 +1,396 @@
+{% load static %}
+
+<style>
+  .faq .answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease;
+  }
+  .faq.active .answer {
+    max-height: 260px;
+  }
+</style>
+
+<section class="relative overflow-hidden py-20 bg-gradient-to-br from-blue-50 to-white">
+  <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+    <div class="hero-part1">
+      <p class="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-primary_c shadow-sm">
+        Change control use case
+      </p>
+      <h1 class="text-5xl md:text-6xl font-extrabold text-blue-900 mt-6 mb-6 leading-tight">
+        Release readiness is the change-control view of the AAPPLIFY control plane
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-700 mb-8">
+        Use this console when production change can create security exposure. AAPPLIFY connects release, identity, data, security, and policy context into one explainable approve, hold, or investigate decision.
+      </p>
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="{% url 'request_demo' %}" class="btn-primary px-6 py-3 rounded-lg font-bold text-lg transition">
+          Book a demo
+        </a>
+        <a href="{% url 'landing_aapplify' %}" class="btn-secondary px-6 py-3 rounded-lg font-semibold text-lg">
+          View full control plane
+        </a>
+      </div>
+      <p class="mt-4 text-sm text-gray-600">This is one use case. The same control plane also supports identity, data, and security consoles.</p>
+    </div>
+    <div class="hero-part2 relative">
+      <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-lg">
+        <div class="flex items-center justify-between">
+          <p class="text-xs uppercase tracking-widest text-gray-500">Change Control Console</p>
+          <span class="px-3 py-1 text-xs font-semibold rounded-full border border-primary_c text-primary_c">Investigate</span>
+        </div>
+        <h3 class="text-2xl font-bold text-blue-900 mt-3">Release 24.3.2</h3>
+        <p class="text-gray-600 mt-2">Customer checkout change across web, API, identity permissions, and background jobs.</p>
+        <div class="mt-4 grid grid-cols-2 gap-4 text-sm text-gray-700">
+          <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+            <p class="text-xs uppercase text-gray-500">Builds</p>
+            <p class="font-semibold">13/14 passed</p>
+          </div>
+          <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+            <p class="text-xs uppercase text-gray-500">Identity</p>
+            <p class="font-semibold">New elevated role</p>
+          </div>
+          <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+            <p class="text-xs uppercase text-gray-500">Data</p>
+            <p class="font-semibold">Customer table touched</p>
+          </div>
+          <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+            <p class="text-xs uppercase text-gray-500">Security</p>
+            <p class="font-semibold">Policy review needed</p>
+          </div>
+        </div>
+        <div class="mt-6 flex items-center gap-4">
+          <div class="text-4xl font-extrabold text-primary_c">68</div>
+          <div class="text-sm text-gray-600">
+            Explainable change-risk score<br />
+            <span class="text-gray-500">Top drivers: elevated access, sensitive data touchpoint, missing control evidence</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-12 bg-white border-t border-gray-200">
+  <div class="container mx-auto px-4">
+    <div class="grid lg:grid-cols-[0.65fr_1.35fr] gap-8 items-start">
+      <div>
+        <p class="text-sm font-semibold text-primary_c uppercase tracking-[0.2em]">Where this fits</p>
+        <h2 class="text-3xl font-bold text-blue-900 mt-3">Release readiness is one domain console.</h2>
+        <p class="text-gray-700 mt-3">Use it for change risk. Extend the same model across identity, data, and security.</p>
+      </div>
+      <div class="grid md:grid-cols-4 gap-4">
+        <a href="{% url 'landing_release_readiness' %}" class="rounded-xl border border-primary_c bg-blue-50 p-5 block hover:shadow transition">
+          <p class="text-sm font-semibold text-primary_c uppercase">Change</p>
+          <h3 class="font-bold text-blue-900 mt-2">Release readiness</h3>
+          <p class="text-gray-700 text-sm mt-2">Approve, hold, or investigate production change.</p>
+        </a>
+        <a href="{% url 'landing_identity' %}" class="rounded-xl border border-gray-200 bg-white p-5 block hover:shadow transition">
+          <p class="text-sm font-semibold text-primary_c uppercase">Identity</p>
+          <h3 class="font-bold text-blue-900 mt-2">Access risk</h3>
+          <p class="text-gray-700 text-sm mt-2">Review privilege drift and risky grants.</p>
+        </a>
+        <a href="{% url 'landing_data' %}" class="rounded-xl border border-gray-200 bg-white p-5 block hover:shadow transition">
+          <p class="text-sm font-semibold text-primary_c uppercase">Data</p>
+          <h3 class="font-bold text-blue-900 mt-2">Policy context</h3>
+          <p class="text-gray-700 text-sm mt-2">Map sensitive data movement to controls.</p>
+        </a>
+        <a href="{% url 'landing_security' %}" class="rounded-xl border border-gray-200 bg-white p-5 block hover:shadow transition">
+          <p class="text-sm font-semibold text-primary_c uppercase">Security</p>
+          <h3 class="font-bold text-blue-900 mt-2">Exposure paths</h3>
+          <p class="text-gray-700 text-sm mt-2">Connect findings to remediation workflows.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Built for the teams that carry the release decision.</h2>
+      <p class="text-lg text-gray-700">AAPPLIFY gives engineering, quality, and platform teams one view they can use together without adding another release meeting.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 mt-10">
+      <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <p class="text-sm font-semibold text-primary_c uppercase tracking-[0.2em]">Engineering</p>
+        <h3 class="text-xl font-bold text-blue-900 mt-3">Engineering and release leaders</h3>
+        <p class="text-gray-700 mt-3">Get one explainable view of whether a release is ready across code, tests, incidents, and approvals.</p>
+      </div>
+      <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <p class="text-sm font-semibold text-primary_c uppercase tracking-[0.2em]">Quality</p>
+        <h3 class="text-xl font-bold text-blue-900 mt-3">QA and quality engineering</h3>
+        <p class="text-gray-700 mt-3">Tie flaky tests, regressions, and release confidence back to the exact release path under review.</p>
+      </div>
+      <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <p class="text-sm font-semibold text-primary_c uppercase tracking-[0.2em]">Platform</p>
+        <h3 class="text-xl font-bold text-blue-900 mt-3">Platform, DevOps, and SRE</h3>
+        <p class="text-gray-700 mt-3">Map pipelines, environments, and deploy signals without forcing teams to replace their existing workflow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-gradient-to-br from-slate-50 to-white">
+  <div class="container mx-auto px-4 grid md:grid-cols-2 gap-10 items-start">
+    <div>
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Release decisions are scattered across tools.</h2>
+      <p class="text-lg text-gray-700">
+        CI may be green while risk is rising in production, tests are noisy, and the final ship decision turns into a meeting.
+      </p>
+    </div>
+    <div class="rounded-2xl border border-gray-200 bg-white p-8 shadow">
+      <h3 class="text-2xl font-bold text-blue-900 mb-3">One release decision with evidence.</h3>
+      <p class="text-gray-700">
+        AAPPLIFY brings together the release signals teams already use and turns them into one explainable recommendation with clear drivers and supporting context.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="product" class="py-16">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">How the product works</h2>
+      <p class="text-lg text-gray-700">Start read-only, connect the systems you already trust, and give each release one board, one score, and one decision path.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-10">
+      <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <p class="text-sm text-primary_c font-semibold">Step 1</p>
+        <h3 class="text-lg font-bold text-blue-900 mb-2">Connect</h3>
+        <p class="text-gray-700">Pull in CI, test, release metadata, ticketing, and observability signals.</p>
+      </div>
+      <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <p class="text-sm text-primary_c font-semibold">Step 2</p>
+        <h3 class="text-lg font-bold text-blue-900 mb-2">Map the release</h3>
+        <p class="text-gray-700">Normalize builds, services, environments, and incidents into one release model.</p>
+      </div>
+      <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <p class="text-sm text-primary_c font-semibold">Step 3</p>
+        <h3 class="text-lg font-bold text-blue-900 mb-2">Score and explain</h3>
+        <p class="text-gray-700">Generate an explainable readiness score with the top drivers behind each decision.</p>
+      </div>
+      <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <p class="text-sm text-primary_c font-semibold">Step 4</p>
+        <h3 class="text-lg font-bold text-blue-900 mb-2">Act when trusted</h3>
+        <p class="text-gray-700">Add approvals or release gates only after your team trusts the score.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-gradient-to-br from-gray-50 to-white">
+  <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+    <div>
+      <p class="text-sm font-semibold text-primary_c uppercase tracking-[0.2em]">Microservices and multi-pipeline releases</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mt-4 mb-4">One release path, many services.</h2>
+      <p class="text-lg text-gray-700">
+        Map one customer-facing release across multiple repos, services, pipelines, and environments so teams can decide based on the whole release path, not isolated tool outputs.
+      </p>
+      <ul class="mt-6 space-y-3 text-gray-700">
+        <li>Track readiness per release, per app, and per environment.</li>
+        <li>See which service or pipeline is driving the hold decision.</li>
+        <li>Keep the release review anchored to one board instead of stitching dashboards together by hand.</li>
+      </ul>
+    </div>
+    <div class="rounded-2xl border border-gray-200 bg-white p-8 shadow-lg">
+      <div class="grid grid-cols-2 gap-4">
+        <div class="rounded-xl bg-blue-50 p-4">
+          <p class="text-xs uppercase tracking-widest text-gray-500">Repos</p>
+          <p class="text-lg font-bold text-blue-900 mt-2">Web, API, Workers</p>
+        </div>
+        <div class="rounded-xl bg-blue-50 p-4">
+          <p class="text-xs uppercase tracking-widest text-gray-500">Pipelines</p>
+          <p class="text-lg font-bold text-blue-900 mt-2">CI, test, deploy</p>
+        </div>
+        <div class="rounded-xl bg-blue-50 p-4">
+          <p class="text-xs uppercase tracking-widest text-gray-500">Environments</p>
+          <p class="text-lg font-bold text-blue-900 mt-2">QA, staging, prod</p>
+        </div>
+        <div class="rounded-xl bg-blue-50 p-4">
+          <p class="text-xs uppercase tracking-widest text-gray-500">Decision</p>
+          <p class="text-lg font-bold text-blue-900 mt-2">Ship, hold, investigate</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="integrations" class="py-16">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Integrations that fit the stack you already run</h2>
+      <p class="text-lg text-gray-700">Most teams start with one CI source, one test source, and one observability source.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+      <div class="rounded-xl border border-gray-200 bg-white p-6">
+        <h3 class="text-lg font-bold text-blue-900 mb-2">CI/CD</h3>
+        <p class="text-gray-700">GitHub Actions, Jenkins, and other pipeline sources that define what is actually shipping.</p>
+      </div>
+      <div class="rounded-xl border border-gray-200 bg-white p-6">
+        <h3 class="text-lg font-bold text-blue-900 mb-2">Tests and workflow systems</h3>
+        <p class="text-gray-700">Test frameworks, Jira, and ServiceNow to connect quality signals with release operations.</p>
+      </div>
+      <div class="rounded-xl border border-gray-200 bg-white p-6">
+        <h3 class="text-lg font-bold text-blue-900 mb-2">Observability</h3>
+        <p class="text-gray-700">Datadog, Splunk, and other monitoring systems to surface the production context behind each decision.</p>
+      </div>
+    </div>
+    <p class="text-gray-600 mt-6">Need another connector? We scope the first integrations during the pilot.</p>
+  </div>
+</section>
+
+<section class="py-16 bg-gradient-to-br from-slate-50 to-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl">
+      <p class="text-sm font-semibold text-primary_c uppercase tracking-[0.2em]">Proof in the pilot</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mt-4 mb-4">Designed to show value quickly, not ask for blind trust.</h2>
+      <p class="text-lg text-gray-700">Instead of promising a black-box score, AAPPLIFY is built to prove where release time is lost and which signals actually drive ship or hold decisions.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 mt-10">
+      <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <p class="text-4xl font-extrabold text-primary_c">24-48h</p>
+        <p class="text-gray-700 mt-3">Typical time to first signal after 2-3 data sources are connected.</p>
+      </div>
+      <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <p class="text-4xl font-extrabold text-primary_c">3</p>
+        <p class="text-gray-700 mt-3">Core integrations to get a readiness board working on a narrow pilot scope.</p>
+      </div>
+      <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <p class="text-4xl font-extrabold text-primary_c">10</p>
+        <p class="text-gray-700 mt-3">Recent releases reviewed so teams can compare the score against what actually happened.</p>
+      </div>
+    </div>
+    <div class="rounded-2xl border border-gray-200 bg-white p-8 shadow mt-8">
+      <h3 class="text-2xl font-bold text-blue-900">What teams use the pilot to validate</h3>
+      <ul class="mt-4 grid md:grid-cols-3 gap-4 text-gray-700">
+        <li>Less time stitching together release status across tools.</li>
+        <li>Earlier detection of flaky, regressing, or unstable releases.</li>
+        <li>Faster promotion decisions with an explainable reason for every hold.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="demo" class="py-16">
+  <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+    <div>
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">See the release decision in 5 minutes</h2>
+      <p class="text-lg text-gray-700 mb-6">
+        Walk through a sample release board, the explainable score, and the signals that pushed the recommendation from ship to hold.
+      </p>
+      <a href="{% url 'request_demo' %}" class="btn-secondary px-6 py-3 rounded-lg font-semibold">Book the walkthrough</a>
+    </div>
+    <div class="rounded-2xl border border-gray-200 bg-white p-4 shadow-lg">
+      <img src="{% static 'assets/images/heroimage.jpg' %}" alt="AAPPLIFY release readiness demo" class="rounded-xl w-full" />
+    </div>
+  </div>
+</section>
+
+<section id="pilot" class="py-16 bg-gradient-to-br from-gray-50 to-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto bg-white rounded-2xl border border-gray-200 p-8 shadow">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div>
+          <h2 class="text-3xl font-bold text-blue-900">14-day pilot and pricing path</h2>
+          <p class="text-gray-700 mt-2">Start with one release path, prove the score, then expand into approvals or guardrails if there is a fit.</p>
+        </div>
+        <a href="{% url 'request_demo' %}" class="btn-primary px-6 py-3 rounded-lg font-semibold">Start a pilot</a>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6 mt-8 text-gray-700">
+        <div class="rounded-xl bg-slate-50 p-5">
+          <h3 class="font-bold text-blue-900 mb-3">Pilot includes</h3>
+          <ul class="space-y-2">
+            <li>Three integrations connected across CI, tests, and observability</li>
+            <li>Readiness board for recent releases</li>
+            <li>Explainable scoring with top drivers and evidence</li>
+            <li>Weekly tuning sessions with your team</li>
+          </ul>
+        </div>
+        <div class="rounded-xl bg-slate-50 p-5">
+          <h3 class="font-bold text-blue-900 mb-3">Pricing approach</h3>
+          <ul class="space-y-2">
+            <li>Scoped around apps, pipelines, environments, and integrations</li>
+            <li>Read-only rollout first, with governance controls added later if needed</li>
+            <li>Tailored quote after the pilot confirms fit and rollout scope</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="security" class="py-16">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Security built for enterprise release workflows</h2>
+      <p class="text-lg text-gray-700">The fastest path to trust is read-only first, least-privilege access, and a clear audit trail for every decision.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 mt-10">
+      <div class="rounded-xl border border-gray-200 bg-white p-6">
+        <h3 class="text-lg font-bold text-blue-900 mb-2">Read-only start</h3>
+        <p class="text-gray-700">Connect with minimal permissions and validate the score before enabling any enforcement.</p>
+      </div>
+      <div class="rounded-xl border border-gray-200 bg-white p-6">
+        <h3 class="text-lg font-bold text-blue-900 mb-2">Least privilege</h3>
+        <p class="text-gray-700">Limit access to the systems needed for release context, scoring, and investigation.</p>
+      </div>
+      <div class="rounded-xl border border-gray-200 bg-white p-6">
+        <h3 class="text-lg font-bold text-blue-900 mb-2">Audit-ready</h3>
+        <p class="text-gray-700">Keep event history and decision evidence available for release reviews and governance workflows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-gradient-to-br from-slate-50 to-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-10">Common questions</h2>
+    <div class="max-w-4xl mx-auto space-y-4">
+      <div class="faq border-b cursor-pointer py-6 border-gray-300">
+        <div class="flex items-center justify-between">
+          <p class="text-2xl font-medium">How fast can we see value?</p>
+          <span class="text-primary_c text-xl">+</span>
+        </div>
+        <p class="answer text-lg text-gray-700">Most teams start seeing actionable signal in 24-48 hours once 2-3 data sources are connected.</p>
+      </div>
+      <div class="faq border-b cursor-pointer py-6 border-gray-300">
+        <div class="flex items-center justify-between">
+          <p class="text-2xl font-medium">Do we need to change our release process?</p>
+          <span class="text-primary_c text-xl">+</span>
+        </div>
+        <p class="answer text-lg text-gray-700">No. AAPPLIFY starts read-only. You add approvals or release gates only after the score is trusted.</p>
+      </div>
+      <div class="faq border-b cursor-pointer py-6 border-gray-300">
+        <div class="flex items-center justify-between">
+          <p class="text-2xl font-medium">Does it work with microservices or multiple pipelines?</p>
+          <span class="text-primary_c text-xl">+</span>
+        </div>
+        <p class="answer text-lg text-gray-700">Yes. Readiness is tracked per release, per app, and per environment so a whole release path can be evaluated together.</p>
+      </div>
+      <div class="faq border-b cursor-pointer py-6 border-gray-300">
+        <div class="flex items-center justify-between">
+          <p class="text-2xl font-medium">How is the readiness score explained?</p>
+          <span class="text-primary_c text-xl">+</span>
+        </div>
+        <p class="answer text-lg text-gray-700">Every score shows the specific CI, test, and observability drivers behind the recommendation so teams can see what changed and why.</p>
+      </div>
+    </div>
+    <div class="text-center mt-8">
+      <a href="{% url 'main_faq' %}" class="text-primary_c font-semibold hover:underline">See the full FAQ</a>
+    </div>
+  </div>
+</section>
+
+<section class="py-16">
+  <div class="container mx-auto px-4">
+    <div class="rounded-2xl border border-gray-200 bg-white p-10 text-center shadow">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Make the next release decision easier to explain.</h2>
+      <p class="text-lg text-gray-700 mb-8">Book a demo and we will map your current release process to the fastest path for a read-only 14-day pilot.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="{% url 'request_demo' %}" class="btn-primary px-6 py-3 rounded-lg font-semibold">Book a demo</a>
+        <a href="{% url 'main_about' %}" class="btn-secondary px-6 py-3 rounded-lg font-semibold">Why AAPPLIFY</a>
+      </div>
+    </div>
+  </div>
+</section>

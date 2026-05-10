@@ -1,0 +1,107 @@
+{% load static %}
+
+<style>
+  .faq .answer {
+    max-height: 0;
+    transition: max-height 1s ease;
+  }
+
+  .faq.active .answer {
+    max-height: 300px;
+    animation: fade 1s ease-in-out;
+  }
+
+  .faq.active img{
+    transform: rotate(0deg);
+  }
+
+  .faq img{
+    transition: transform 0.5s ease-in;
+  }
+
+  @keyframes fade {
+    from{
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+</style>
+
+<section class="py-12 bg-gray-100">
+  <div class="container">
+    <h2 class="text-5xl font-bold mb-8">AI Services FAQ</h2>
+    <div class="container mx-auto">
+      <div class="space-y-4">
+        <div class="faq border-b cursor-pointer py-8 border-gray-500">
+          <div class="flex items-center justify-between">
+            <p class="lg:text-4xl text-2xl font-medium pb-4">
+              What AI solutions do you offer?
+            </p>
+            <img class="rotate-180" src="{% static 'assets/icons/uparrow.svg' %}" alt="" />
+          </div>
+          <p class="answer text-xl overflow-hidden">
+            We offer machine learning, natural language processing, and data
+            analytics solutions tailored to your business needs.
+          </p>
+        </div>
+
+        <div class="faq border-b cursor-pointer py-8 border-gray-500">
+          <div class="flex items-center justify-between">
+            <p class="lg:text-4xl text-2xl font-medium pb-4">
+              Do you provide AI consulting?
+            </p>
+            <img class="rotate-180" src="{% static 'assets/icons/uparrow.svg' %}" alt="" />
+          </div>
+          <p class="answer text-xl overflow-hidden">
+            Yes, our experts provide AI consulting to help businesses integrate
+            AI technologies effectively.
+          </p>
+        </div>
+
+        <div class="faq border-b cursor-pointer py-8 border-gray-500">
+          <div class="flex items-center justify-between">
+            <p class="lg:text-4xl text-2xl font-medium pb-4">
+              How can AI help my business?
+            </p>
+            <img class="rotate-180" src="{% static 'assets/icons/uparrow.svg' %}" alt="" />
+          </div>
+          <p class="answer text-xl overflow-hidden">
+            AI can optimize your operations, improve decision-making, and
+            enhance customer experiences.
+          </p>
+        </div>
+
+        <div class="faq border-b cursor-pointer py-8 border-gray-500">
+          <div class="flex items-center justify-between">
+            <p class="lg:text-4xl text-2xl font-medium pb-4">
+              What industries do you serve?
+            </p>
+            <img class="rotate-180" src="{% static 'assets/icons/uparrow.svg' %}" alt="" />
+          </div>
+          <p class="answer text-xl overflow-hidden">
+            We serve various industries, including finance, healthcare, retail,
+            and manufacturing.
+          </p>
+        </div>
+
+        <div class="faq border-b cursor-pointer py-8 border-gray-500">
+          <div class="flex items-center justify-between">
+            <p class="lg:text-4xl text-2xl font-medium pb-4">
+              How do we start with your AI services?
+            </p>
+            <img class="rotate-180" src="{% static 'assets/icons/uparrow.svg' %}" alt="" />
+          </div>
+          <p class="answer text-xl overflow-hidden">
+            Contact us to discuss your needs, and we will create a customized AI
+            plan for your business.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

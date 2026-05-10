@@ -1,0 +1,267 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="{% static 'css/navbar.css' %}"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/input.css' %}"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/output.css' %}"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/animation.css' %}"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/gallery.css' %}"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/theme.css' %}"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="icon" href="{% static 'assets/icons/favicon.svg' %}" type="image/svg+xml">
+    <link rel="alternate icon" href="{% static 'assets/icons/favicon.png' %}" type="image/png">
+    {% block css %}
+    {% endblock %}
+    {% block meta %}
+    {% with meta_title=meta_title|default:title|default:"AAPPLIFY" meta_description=meta_description|default:"AAPPLIFY turns identity, change, security, and policy data into governed action with departmental consoles, capabilities, signals, orchestration, controls, and modules." %}
+    <title>{{ meta_title }}</title>
+    <meta name="description" content="{{ meta_description }}">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="{{ request.build_absolute_uri }}">
+    <meta property="og:site_name" content="AAPPLIFY">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ meta_title }}">
+    <meta property="og:description" content="{{ meta_description }}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'assets/images/heroimage.jpg' %}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ meta_title }}">
+    <meta name="twitter:description" content="{{ meta_description }}">
+    <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'assets/images/heroimage.jpg' %}">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "AAPPLIFY",
+        "url": "{{ request.scheme }}://{{ request.get_host }}",
+        "logo": "{{ request.scheme }}://{{ request.get_host }}{% static 'assets/images/company_logo/aapplify_logo.svg' %}"
+      }
+    </script>
+    {% endwith %}
+    {% endblock %}
+  </head>
+  <body class="app-theme">
+    {% block header %}{% include "components/header.html" %}{% endblock %}
+    {% block content %} {% endblock content %}
+    {% block footer %}{% include "components/footer.html" %}{% endblock %}
+
+    {% block javascript %}{% endblock javascript %}
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+
+      const scrollers = document.querySelectorAll(".scroller");
+
+      function addScrollAnimation() {
+        scrollers.forEach((scroller) => {
+          scroller.setAttribute("data-animated", true);
+
+          const scrollerInner = scroller.querySelector(".scroller_inner");
+          const scrollerContent = Array.from(scrollerInner.children);
+
+          scrollerContent.forEach((item) => {
+            const duplicatedItem = item.cloneNode(true);
+            duplicatedItem.setAttribute("aria-hidden", true);
+            scrollerInner.appendChild(duplicatedItem);
+          });
+        });
+      }
+
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        addScrollAnimation();
+      }
+      function heroAnimation() {
+        var tl = gsap.timeline();
+        tl.from("nav .logo, nav li, nav button", {
+          y: -30,
+          opacity: 0,
+          delay: 0.2,
+          duration: 0.5,
+          stagger: 0.1,
+        });
+        tl.from(
+          ".hero-part1 h1",
+          {
+            x: -200,
+            opacity: 0,
+            duration: 0.5,
+          },
+          "-=1"
+        );
+        tl.from(
+          ".hero-part1 p",
+          {
+            x: -50,
+            opacity: 0,
+            duration: 0.4,
+          },
+          "-=0.5"
+        );
+        tl.from(".hero-part1 button", {
+          opacity: 0,
+          duration: 0.4,
+        });
+        tl.from(
+          ".hero-part2",
+          {
+            x: 30,
+            opacity: 0,
+            duration: 0.5,
+          },
+          "-=0.7"
+        );
+      }
+
+
+      function unlockAiAnimation() {
+        var tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".unlockai",
+            scroller: "body",
+            start: "top 50%",
+            end: "top -20%",
+            scrub: 2,
+          },
+        });
+
+        tl.from(".unlockai h1", {
+          y: 50,
+          opacity: 0,
+          duration: 0.7,
+        });
+        tl.from(".unlockai p", {
+          y: 50,
+          opacity: 0,
+          duration: 0.7,
+        });
+        tl.from(".unlockai img", {
+          y: 50,
+          opacity: 0,
+          duration: 0.7,
+        });
+      }
+
+
+      function introductionAnimation() {
+        var tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".introduction",
+            scroller: "body",
+            start: "top 50%",
+            end: "top -20%",
+            scrub: 2,
+          },
+        });
+        tl.from(".introduction h1", {
+          y: 50,
+          opacity: 0,
+          duration: 0.7,
+        });
+        tl.from(".introduction .elem", {
+          y: 50,
+          opacity: 0,
+          duration: 0.7,
+          stagger: 0.3,
+        });
+      }
+
+      heroAnimation();
+      unlockAiAnimation();
+      introductionAnimation();
+    </script>
+    <script>
+      const faqs = document.querySelectorAll(".faq");
+      faqs.forEach((faq) => {
+        faq.addEventListener("click", () => {
+          faq.classList.toggle("active");
+        });
+      });
+    </script>
+    <script src="{% static 'js/animation.js' %}" defer></script>
+    <script src="{% static 'js/navmenu.js' %}" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      var gallerySwiper = new Swiper(".gallerySwiper", {
+        slidesPerView: "auto",
+        spaceBetween: 30,
+        loop: true,
+        cssMode: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        mousewheel: true,
+        keyboard: true,
+        centeredSlides: true,
+      });
+
+      var testimonialSwiper = new Swiper(".testimonialSwiper", {
+        spaceBetween: 30,
+        loop: true,
+        cssMode: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        mousewheel: true,
+        keyboard: true,
+      });
+    </script>
+  </body>
+</html>

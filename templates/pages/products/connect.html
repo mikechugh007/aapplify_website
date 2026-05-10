@@ -1,0 +1,190 @@
+{% extends 'mainbase.html' %}
+{% load static %}
+{% block content %}
+<section class="py-16 connect-hero">
+  <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+    <div class="md:w-1/2">
+      <h1 class="text-5xl font-extrabold connect-title mb-4">Connect anything. <span class="connect-accent">Normalize once.</span> Power everything.</h1>
+      <p class="text-xl connect-body mb-6">Plug-and-play connectors that ingest data from your apps, files, and databases into a single, action-ready stream without custom pipelines.</p>
+      <div class="flex gap-4 mb-8">
+        <a href="{% url 'request_demo' %}" class="btn-primary px-8 py-3 rounded-lg font-bold text-lg transition">Book a demo</a>
+        <a href="#connectors" class="btn-secondary px-8 py-3 rounded-lg font-bold text-lg transition">View connectors</a>
+      </div>
+      <ul class="list-disc pl-6 text-lg connect-body space-y-2">
+        <li>Reduce integration time from weeks to hours with prebuilt connectors.</li>
+        <li>Standardize messy inputs into a reliable, normalized stream.</li>
+        <li>Feed Signals and Flow with consistent data so automations don't break.</li>
+      </ul>
+    </div>
+    <div class="md:w-1/2 flex flex-col items-center">
+      <!-- Product-themed SVG illustration: Data connectors flowing into a unified stream -->
+      <div class="w-full max-w-md mb-6 animate-fade-in connect-frame">
+        <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+          <rect x="0" y="0" width="400" height="300" rx="32" fill="#14182e"/>
+          <!-- Connectors -->
+          <rect x="40" y="60" width="60" height="40" rx="10" fill="#5c6eff"/>
+          <rect x="170" y="30" width="60" height="40" rx="10" fill="#5ad7ff"/>
+          <rect x="300" y="60" width="60" height="40" rx="10" fill="#f6b26b"/>
+          <!-- Arrows to central stream -->
+          <path d="M70 100 Q90 150 200 170" stroke="#5c6eff" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+          <path d="M200 70 Q210 120 200 170" stroke="#5ad7ff" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+          <path d="M330 100 Q310 150 200 170" stroke="#f6b26b" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+          <!-- Central stream -->
+          <rect x="170" y="170" width="60" height="60" rx="16" fill="#7c5cff"/>
+          <text x="200" y="205" text-anchor="middle" fill="#f5f7ff" font-size="18" font-weight="bold">Connect</text>
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L10,5 L0,10 L4,5 Z" fill="#7c5cff" />
+            </marker>
+          </defs>
+        </svg>
+      </div>
+      <video class="rounded-xl w-full max-w-md animate-fade-in connect-media" autoplay loop muted playsinline poster="https://assets-global.website-files.com/5f6b7b7b7b7b7b7b7b7b7b7/63e3b7b7b7b7b7b7b7b7b7b7_connect-thumb.jpg">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 connect-panel connect-divider">
+  <div class="container mx-auto px-4 max-w-4xl">
+    <h2 class="text-3xl font-bold connect-title mb-4">What is Connect?</h2>
+    <p class="text-lg connect-body mb-6">
+      <span class="font-bold connect-accent">AAPPLIFY Connect</span> is your AI-native ingestion and normalization layer built for operational use, not just data movement. Leveraging advanced machine learning, it automatically adapts to new data sources, detects anomalies, and ensures high-quality, trusted data for downstream detection and automation. Connect turns scattered telemetry, tickets, spreadsheets, and database records into a consistent, action-ready stream that powers your business intelligence, automation, and AI workflows.
+    </p>
+    <div class="flex flex-col md:flex-row gap-8 items-center">
+      <!-- Product Vision SVG: Connect anything. Normalize once. Power everything. -->
+      <div class="w-full max-w-xs animate-fade-in connect-frame">
+        <svg viewBox="0 0 300 220" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+          <rect x="0" y="0" width="300" height="220" rx="24" fill="#14182e"/>
+          <!-- Data sources -->
+          <circle cx="50" cy="40" r="22" fill="#5c6eff"/>
+          <text x="50" y="46" text-anchor="middle" fill="#f5f7ff" font-size="13" font-weight="bold">App</text>
+          <circle cx="150" cy="30" r="22" fill="#5ad7ff"/>
+          <text x="150" y="36" text-anchor="middle" fill="#f5f7ff" font-size="13" font-weight="bold">DB</text>
+          <circle cx="250" cy="40" r="22" fill="#f6b26b"/>
+          <text x="250" y="46" text-anchor="middle" fill="#f5f7ff" font-size="13" font-weight="bold">API</text>
+          <!-- Arrows to normalization -->
+          <path d="M50 62 Q60 100 120 120" stroke="#5c6eff" stroke-width="3" fill="none" marker-end="url(#arrow2)"/>
+          <path d="M150 52 Q150 100 150 120" stroke="#5ad7ff" stroke-width="3" fill="none" marker-end="url(#arrow2)"/>
+          <path d="M250 62 Q240 100 180 120" stroke="#f6b26b" stroke-width="3" fill="none" marker-end="url(#arrow2)"/>
+          <!-- Normalization box -->
+          <rect x="100" y="120" width="100" height="40" rx="12" fill="#7c5cff"/>
+          <text x="150" y="145" text-anchor="middle" fill="#f5f7ff" font-size="15" font-weight="bold">Normalize</text>
+          <!-- Power outputs -->
+          <rect x="30" y="180" width="60" height="28" rx="8" fill="#5c6eff"/>
+          <text x="60" y="198" text-anchor="middle" fill="#f5f7ff" font-size="12" font-weight="bold">Signals</text>
+          <rect x="120" y="180" width="60" height="28" rx="8" fill="#5ad7ff"/>
+          <text x="150" y="198" text-anchor="middle" fill="#14182e" font-size="12" font-weight="bold">Flow</text>
+          <rect x="210" y="180" width="60" height="28" rx="8" fill="#f6b26b"/>
+          <text x="240" y="198" text-anchor="middle" fill="#14182e" font-size="12" font-weight="bold">Console</text>
+          <!-- Arrows from normalization to outputs -->
+          <path d="M150 160 Q60 170 60 180" stroke="#5c6eff" stroke-width="2.5" fill="none" marker-end="url(#arrow1)"/>
+          <path d="M150 160 Q150 170 150 180" stroke="#5ad7ff" stroke-width="2.5" fill="none" marker-end="url(#arrow1)"/>
+          <path d="M150 160 Q240 170 240 180" stroke="#f6b26b" stroke-width="2.5" fill="none" marker-end="url(#arrow1)"/>
+          <defs>
+            <marker id="arrow1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L8,4 L0,8 L3,4 Z" fill="#7c5cff" />
+            </marker>
+            <marker id="arrow2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L8,4 L0,8 L3,4 Z" fill="#7c5cff" />
+            </marker>
+          </defs>
+        </svg>
+      </div>
+      <ul class="list-disc pl-6 text-lg connect-body space-y-2">
+        <li>Operational-grade normalization for all your data sources</li>
+        <li>Prebuilt connectors for popular apps, files, and databases</li>
+        <li>Real-time ingestion and transformation</li>
+        <li>Seamless integration with AAPPLIFY Signals and Flow</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="connectors" class="py-16 connect-subtle connect-divider">
+  <div class="container mx-auto px-4 max-w-4xl">
+    <h2 class="text-2xl font-bold connect-title mb-6">Featured Connectors</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="connect-card rounded-xl p-6 flex flex-col items-center transition">
+        <img src="{% static 'assets/images/company_logo/excel.png' %}" alt="Microsoft Excel" class="w-16 h-16 mb-4 rounded connect-logo" />
+        <h3 class="font-bold text-lg mb-2 connect-title">CSV & Excel</h3>
+        <p class="connect-muted text-center">Import spreadsheets and flat files with automatic schema detection and normalization.</p>
+      </div>
+      <div class="connect-card rounded-xl p-6 flex flex-col items-center transition">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg" alt="MongoDB" class="w-16 h-16 mb-4 rounded connect-logo" />
+        <h3 class="font-bold text-lg mb-2 connect-title">Databases</h3>
+        <p class="connect-muted text-center">Connect to SQL, NoSQL, and cloud databases for real-time data ingestion.</p>
+      </div>
+      <div class="connect-card rounded-xl p-6 flex flex-col items-center transition">
+        <img src="{% static 'assets/images/company_logo/snowflake.png' %}" alt="Snowflake" class="w-16 h-16 mb-4 rounded connect-logo" />
+        <h3 class="font-bold text-lg mb-2 connect-title">Apps & APIs</h3>
+        <p class="connect-muted text-center">Integrate with SaaS apps, ticketing systems, and APIs with minimal setup.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+.animate-fade-in {
+  animation: fade-in 1.2s ease;
+}
+.connect-hero {
+  background: linear-gradient(180deg, rgba(15, 19, 36, 0.9) 0%, rgba(10, 13, 26, 0.75) 100%);
+  border-bottom: 1px solid rgba(125, 140, 210, 0.18);
+}
+.connect-panel {
+  background: linear-gradient(180deg, rgba(18, 22, 40, 0.92) 0%, rgba(14, 18, 34, 0.9) 100%);
+}
+.connect-subtle {
+  background: linear-gradient(180deg, rgba(14, 18, 34, 0.82) 0%, rgba(12, 15, 28, 0.82) 100%);
+}
+.connect-divider {
+  border-top: 1px solid rgba(125, 140, 210, 0.18);
+}
+.connect-title {
+  color: var(--text-100);
+  text-shadow: 0 0 18px rgba(92, 110, 255, 0.25);
+}
+.connect-accent {
+  color: var(--glow-blue);
+}
+.connect-body {
+  color: var(--text-200);
+}
+.connect-muted {
+  color: var(--text-300);
+}
+.connect-frame {
+  background: linear-gradient(180deg, rgba(20, 24, 45, 0.92) 0%, rgba(14, 18, 34, 0.92) 100%);
+  border: 1px solid rgba(120, 140, 220, 0.25);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 12px 28px rgba(6, 10, 20, 0.6), 0 0 20px rgba(92, 110, 255, 0.15);
+}
+.connect-media {
+  border: 1px solid rgba(120, 140, 220, 0.25);
+  box-shadow: 0 12px 28px rgba(6, 10, 20, 0.65), 0 0 24px rgba(90, 215, 255, 0.18);
+}
+.connect-card {
+  background: linear-gradient(180deg, rgba(20, 24, 45, 0.94) 0%, rgba(14, 18, 34, 0.94) 100%);
+  border: 1px solid rgba(120, 140, 220, 0.22);
+  box-shadow: 0 12px 28px rgba(6, 10, 20, 0.6);
+  transform: translateY(0);
+}
+.connect-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(110, 130, 230, 0.5);
+  box-shadow: 0 16px 32px rgba(6, 10, 20, 0.7), 0 0 20px rgba(92, 110, 255, 0.25);
+}
+.connect-logo {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 8px;
+}
+</style>
+{% endblock %}

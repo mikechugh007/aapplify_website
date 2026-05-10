@@ -1,0 +1,67 @@
+{% load static %}
+
+<section class="py-12 container">
+    <h2 class="text-5xl font-bold text-center mb-8 ">Pricing Table</h2>
+    <div class="lg:flex grid gap-10 py-12 items-center">
+        <div class="w-full lg:w-1/3 rounded-lg border border-black p-5 -mr-2 pr-6">
+            <div class="w-full h-56">
+                <img class="w-full h-full object-cover object-center rounded-lg" src="{% static 'assets/images/basic.webp' %}"  alt="">
+            </div>
+            <h3 class="text-2xl font-bold py-6">Basic AI Solutions</h3>
+            <div class="text-5xl font-bold mb-2 text-left">$49</div>
+            <p class="text-lg mb-2 text-left">per month</p>
+            <a href="#" class="bg-blue-500 text-white w-full block py-3 rounded-md hover:bg-blue-600 text-xl text-center">More info</a>
+            <p class="text-xl py-6">Ideal for small projects needing basic AI capabilities. Get started with our AI tools and support.</p>
+            <ul class="space-y-2">
+                <li class="flex items-center gap-3 pb-4">
+                    <img src="{% static 'assets/icons/check.svg' %}" alt="">
+                        <span class="text-xl">Support</span>
+                    </li>
+                    <li class="flex items-center gap-3 pb-4">
+                        <img src="{% static 'assets/icons/check.svg' %}" alt="">
+                            <span class="text-xl">Tools</span>
+                    </li>
+            </ul>
+        </div>
+        <div class="w-full lg:w-1/3 rounded-lg text-left border lg:border-2 border-black px-5 py-10 bg-white z-20">
+            <div class="w-full h-56">
+                <img class="w-full h-full object-cover object-center rounded-lg" src="{% static 'assets/images/advance.webp' %}"  alt="">
+            </div>
+            <h3 class="text-2xl font-bold py-6">Advanced AI Solutions</h3>
+            <div class="text-5xl font-bold mb-2 text-left">$199</div>
+            <p class="text-lg mb-2 text-left">per month</p>
+            <a href="#" class="bg-blue-500 text-white w-full block py-3 rounded-md hover:bg-blue-600 text-xl text-center">More info</a>
+            <p class="text-xl py-6">Perfect for mid-sized projects. Get enhanced AI features and priority support for better results.</p>
+            <ul class="space-y-2">
+                <li class="flex items-center gap-3 pb-4">
+                    <img src="{% static 'assets/icons/check.svg' %}" alt="">
+                        <span class="text-xl">Advanced tools</span>
+                    </li>
+                    <li class="flex items-center gap-3 pb-4">
+                        <img src="{% static 'assets/icons/check.svg' %}" alt="">
+                            <span class="text-xl">Priority Support</span>
+                    </li>
+            </ul>
+        </div>
+        <div class="w-full lg:w-1/3 rounded-lg text-left border border-black p-5 lg:-ml-4 pl-8">
+            <div class="w-full h-56">
+                <img class="w-full h-full object-cover object-center rounded-lg" src="{% static 'assets/images/premium.webp' %}"  alt="">
+            </div>
+            <h3 class="text-2xl font-bold py-6">Premium AI Solutions</h3>
+            <div class="text-5xl font-bold mb-2 text-left">$499</div>
+            <p class="text-lg mb-2 text-left">per month</p>
+            <a href="#" class="bg-blue-500 text-white w-full block py-3 rounded-md hover:bg-blue-600 text-xl text-center">More info</a>
+            <p class="text-xl py-6">Best for large projects. Access all AI features, top-tier support, and custom solutions tailored to you.</p>
+            <ul class="space-y-2">
+                <li class="flex items-center gap-3 pb-4">
+                    <img src="{% static 'assets/icons/check.svg' %}" alt="">
+                        <span class="text-xl">All Features</span>
+                    </li>
+                    <li class="flex items-center gap-3 pb-4">
+                        <img src="{% static 'assets/icons/check.svg' %}" alt="">
+                            <span class="text-xl">Custom solutions</span>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,8 @@
+.git
+.vscode
+env
+node_modules
+temp
+__pycache__
+*.pyc
+*.pyo

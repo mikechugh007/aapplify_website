@@ -1,0 +1,137 @@
+{% extends 'mainbase.html' %}
+
+{% block content %}
+<section class="py-20 bg-gradient-to-br from-blue-50 to-white">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <p class="text-sm font-semibold text-primary_c uppercase tracking-[0.2em]">Request a demo</p>
+    <h1 class="text-5xl md:text-6xl font-extrabold text-blue-900 mt-4 mb-6">Map one risk workflow into the AAPPLIFY control plane.</h1>
+    <p class="text-xl text-gray-700 max-w-4xl">
+      We will review one identity, change, data, or security workflow and show how AAPPLIFY connects capabilities, signals, orchestration, controls, policy files, and departmental consoles.
+    </p>
+  </div>
+</section>
+
+<section class="py-16">
+  <div class="container mx-auto px-4 grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-start">
+    <div class="space-y-8">
+      <div class="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+        <h2 class="text-2xl font-bold text-blue-900">Who this is for</h2>
+        <p class="text-lg text-gray-700 mt-4">
+          Best for security, identity, compliance, platform, data, and application teams that need a focused console for the risks they own.
+        </p>
+      </div>
+
+      <div class="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+        <h2 class="text-2xl font-bold text-blue-900">What happens in the demo</h2>
+        <ul class="mt-4 space-y-3 text-lg text-gray-700">
+          <li>Map one high-priority identity, change, data, or security workflow.</li>
+          <li>Identify the systems, files, policies, and owners involved.</li>
+          <li>Show how signals can trigger approvals, remediation, or review.</li>
+          <li>Define the first console, controls, and pilot success measures.</li>
+        </ul>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+          <h2 class="text-2xl font-bold text-blue-900">What to have ready</h2>
+          <ul class="mt-4 space-y-3 text-gray-700">
+            <li>Your identity or security tools</li>
+            <li>Your change or workflow systems</li>
+            <li>Any data, policy, or control documents</li>
+            <li>One risky workflow you want to improve</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+          <h2 class="text-2xl font-bold text-blue-900">What happens next</h2>
+          <p class="text-gray-700 mt-4">
+            If there is a fit, we scope a focused pilot around one department console, a few high-value sources, clear signals, and the controls or workflows needed to prove value.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-2xl border border-gray-200 bg-white p-8 shadow-lg">
+      <h2 class="text-2xl font-bold text-blue-900">Tell us about your control-plane use case</h2>
+      <p class="text-gray-700 mt-3">Share the basics here and we will tailor the walkthrough.</p>
+
+      {% if success_message %}
+      <div class="mt-6 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-green-900">
+        {{ success_message }}
+      </div>
+      {% endif %}
+
+      {% if form.non_field_errors %}
+      <div class="mt-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-red-900">
+        {{ form.non_field_errors }}
+      </div>
+      {% endif %}
+
+      <form method="post" class="mt-6 space-y-5">
+        {% csrf_token %}
+        <div class="grid md:grid-cols-2 gap-5">
+          <div>
+            <label for="{{ form.name.id_for_label }}" class="block text-sm font-semibold text-gray-700 mb-2">Name</label>
+            <input id="{{ form.name.id_for_label }}" name="{{ form.name.html_name }}" type="text" value="{{ form.name.value|default_if_none:'' }}" class="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-primary_c">
+            {% if form.name.errors %}<p class="text-sm text-red-600 mt-2">{{ form.name.errors|join:", " }}</p>{% endif %}
+          </div>
+          <div>
+            <label for="{{ form.work_email.id_for_label }}" class="block text-sm font-semibold text-gray-700 mb-2">Work email</label>
+            <input id="{{ form.work_email.id_for_label }}" name="{{ form.work_email.html_name }}" type="email" value="{{ form.work_email.value|default_if_none:'' }}" class="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-primary_c">
+            {% if form.work_email.errors %}<p class="text-sm text-red-600 mt-2">{{ form.work_email.errors|join:", " }}</p>{% endif %}
+          </div>
+          <div>
+            <label for="{{ form.company.id_for_label }}" class="block text-sm font-semibold text-gray-700 mb-2">Company</label>
+            <input id="{{ form.company.id_for_label }}" name="{{ form.company.html_name }}" type="text" value="{{ form.company.value|default_if_none:'' }}" class="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-primary_c">
+            {% if form.company.errors %}<p class="text-sm text-red-600 mt-2">{{ form.company.errors|join:", " }}</p>{% endif %}
+          </div>
+          <div>
+            <label for="{{ form.role.id_for_label }}" class="block text-sm font-semibold text-gray-700 mb-2">Role</label>
+            <input id="{{ form.role.id_for_label }}" name="{{ form.role.html_name }}" type="text" value="{{ form.role.value|default_if_none:'' }}" class="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-primary_c">
+            {% if form.role.errors %}<p class="text-sm text-red-600 mt-2">{{ form.role.errors|join:", " }}</p>{% endif %}
+          </div>
+          <div>
+            <label for="{{ form.ci_tool.id_for_label }}" class="block text-sm font-semibold text-gray-700 mb-2">Identity / security tools</label>
+            <input id="{{ form.ci_tool.id_for_label }}" name="{{ form.ci_tool.html_name }}" type="text" value="{{ form.ci_tool.value|default_if_none:'' }}" class="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-primary_c">
+            {% if form.ci_tool.errors %}<p class="text-sm text-red-600 mt-2">{{ form.ci_tool.errors|join:", " }}</p>{% endif %}
+          </div>
+          <div>
+            <label for="{{ form.test_tool.id_for_label }}" class="block text-sm font-semibold text-gray-700 mb-2">Change / workflow tools</label>
+            <input id="{{ form.test_tool.id_for_label }}" name="{{ form.test_tool.html_name }}" type="text" value="{{ form.test_tool.value|default_if_none:'' }}" class="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-primary_c">
+            {% if form.test_tool.errors %}<p class="text-sm text-red-600 mt-2">{{ form.test_tool.errors|join:", " }}</p>{% endif %}
+          </div>
+          <div>
+            <label for="{{ form.observability_tool.id_for_label }}" class="block text-sm font-semibold text-gray-700 mb-2">Data / observability tools</label>
+            <input id="{{ form.observability_tool.id_for_label }}" name="{{ form.observability_tool.html_name }}" type="text" value="{{ form.observability_tool.value|default_if_none:'' }}" class="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-primary_c">
+            {% if form.observability_tool.errors %}<p class="text-sm text-red-600 mt-2">{{ form.observability_tool.errors|join:", " }}</p>{% endif %}
+          </div>
+          <div>
+            <label for="{{ form.number_of_apps_pipelines.id_for_label }}" class="block text-sm font-semibold text-gray-700 mb-2">Departments / apps in scope</label>
+            <input id="{{ form.number_of_apps_pipelines.id_for_label }}" name="{{ form.number_of_apps_pipelines.html_name }}" type="text" value="{{ form.number_of_apps_pipelines.value|default_if_none:'' }}" class="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-primary_c">
+            {% if form.number_of_apps_pipelines.errors %}<p class="text-sm text-red-600 mt-2">{{ form.number_of_apps_pipelines.errors|join:", " }}</p>{% endif %}
+          </div>
+        </div>
+        <div>
+          <label for="{{ form.biggest_release_blocker.id_for_label }}" class="block text-sm font-semibold text-gray-700 mb-2">Highest-priority risk or workflow</label>
+          <textarea id="{{ form.biggest_release_blocker.id_for_label }}" name="{{ form.biggest_release_blocker.html_name }}" rows="4" class="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-primary_c">{{ form.biggest_release_blocker.value|default_if_none:'' }}</textarea>
+          {% if form.biggest_release_blocker.errors %}<p class="text-sm text-red-600 mt-2">{{ form.biggest_release_blocker.errors|join:", " }}</p>{% endif %}
+        </div>
+        <button type="submit" class="w-full btn-primary px-6 py-3 rounded-lg font-semibold">Submit demo request</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-gradient-to-br from-slate-50 to-white">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <div>
+        <h2 class="text-3xl font-bold text-blue-900">Prefer to book time directly?</h2>
+        <p class="text-lg text-gray-700 mt-2">Use the calendar below if you already know you want the walkthrough.</p>
+      </div>
+    </div>
+    <div class="my-8 flex justify-center">
+      <iframe src="https://calendly.com/mike-chugh-aapplify/aapplify-initial-discussion" width="100%" height="700" frameborder="0" scrolling="no" style="min-width:320px; max-width:900px; border-radius: 1rem; box-shadow: 0 2px 16px rgba(0,0,0,0.08);"></iframe>
+    </div>
+  </div>
+</section>
+{% endblock %}

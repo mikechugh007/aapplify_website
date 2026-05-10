@@ -1,0 +1,28 @@
+{% load static %}
+
+<section class="text-left py-24 bg-[#172620]">
+    <div class="container grid md:grid-cols-2 gap-16 text-white">
+        <div class="grid grid-cols-2 gap-5 md:order-1 order-last">
+            <div class="flex flex-col gap-2">
+                <label class="text-lg" for="name">Name</label>
+                <input class="p-3 outline-blue-500 bg-[#303E38]" type="text" name="name" id="">
+            </div>
+            <div class="flex flex-col gap-2">
+                <label class="text-lg" for="name">Email</label>
+                <input class="p-3 outline-blue-500 bg-[#303E38]" type="text" name="name" id="">
+            </div>
+            <div class="flex flex-col gap-2 col-span-2">
+                <label for="name">Message</label>
+                <textarea class="p-3 outline-blue-500 bg-[#303E38]" rows="4" cols="40" name="message" id=""></textarea>
+            </div>
+            <div class="flex justify-between items-center col-span-2">
+                <p class="w-96">This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
+                <input class="bg-[#994D0A] py-3 px-10" type="submit" value="submit">
+            </div>
+        </div>
+        <div>
+            <h3 class="text-4xl font-bold mb-4">Contact Us Today</h3>
+            <p class="text-lg mb-8">Reach out to us using the form. We are here to help with your artificial intelligence needs.</p>
+        </div>
+    </div>
+</section>

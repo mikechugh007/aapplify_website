@@ -1,0 +1,26 @@
+{% load static %}
+
+<section class="container pt-8" id="service-bookings">
+    <h2 class="text-5xl font-bold mb-8">Service Booked</h2>
+    {% if booking %}
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-10 pt-12">
+            {% for book in booking %}
+            <div class="">
+                <div class="w-full h-96 pb-8">
+                    <img class="w-full rounded-lg h-full object-cover object-center" src="{{ book.service.thumbnail_img.url }}" alt="{{ service.title }}">
+                </div>
+                <h1 class="text-2xl font-semibold">{{ book.service.title }}</h1>
+                <p class="text-lg pb-4">
+                    {{ booked.service.short_description }}
+                </p>
+                <strong>Title:</strong> {{ book.title }}<br>
+                <strong>Status:</strong> {{ book.get_status_display }}<br>
+                <strong>Price:</strong> ${{ book.price }}<br>
+                <strong>Booking Date:</strong> {{ book.booking_date|date:"Y-m-d H:i" }}
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No bookings found.</p>
+    {% endif %}
+</section>

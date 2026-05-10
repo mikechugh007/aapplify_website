@@ -1,0 +1,58 @@
+{% extends 'mainbase.html' %}
+{% block content %}
+<section class="py-16 bg-gradient-to-br from-blue-50 to-white">
+  <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+    <div class="md:w-1/2">
+      <h1 class="text-5xl font-extrabold text-blue-900 mb-4">Change Guardrails & Controls</h1>
+      <p class="text-xl text-gray-700 mb-6">Detect risky change across applications, infrastructure, identity, and data systems. Trigger approvals, remediation, and controls before change creates security exposure.</p>
+      <ul class="list-disc pl-6 text-lg text-gray-800 space-y-2 mb-8">
+        <li>Change-impact detection</li>
+        <li>Risk and compliance checks</li>
+        <li>Approval and exception routing</li>
+        <li>Control evidence capture</li>
+      </ul>
+      <a href="{% url 'request_demo' %}" class="bg-blue-800 text-white px-8 py-3 rounded-lg font-bold text-lg shadow hover:bg-blue-900 transition">Book a demo</a>
+    </div>
+    <div class="md:w-1/2 flex flex-col items-center">
+      <div class="w-full max-w-md mb-6 animate-fade-in">
+        <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+          <rect x="0" y="0" width="400" height="300" rx="32" fill="#e0f2fe"/>
+          <rect x="100" y="100" width="200" height="100" rx="24" fill="#2563eb"/>
+          <text x="200" y="170" text-anchor="middle" fill="#fff" font-size="22" font-weight="bold">Guardrails</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-16 bg-white border-t">
+  <div class="container mx-auto px-4 max-w-4xl">
+    <h2 class="text-3xl font-bold text-primary_c mb-4">Key Benefits</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" alt="Quality Gates" class="w-16 h-16 mb-4" />
+        <h3 class="font-bold text-lg mb-2">Change Gates</h3>
+        <p class="text-gray-600 text-center">Automated checks for risky change across systems, roles, data, and environments.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Risk Checks" class="w-16 h-16 mb-4" />
+        <h3 class="font-bold text-lg mb-2">Risk Checks</h3>
+        <p class="text-gray-600 text-center">Continuous risk and compliance validation for high-impact changes.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png" alt="Release Insights" class="w-16 h-16 mb-4" />
+        <h3 class="font-bold text-lg mb-2">Control Evidence</h3>
+        <p class="text-gray-600 text-center">Audit-ready evidence for approvals, exceptions, and compensating controls.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+.animate-fade-in {
+  animation: fade-in 1.2s ease;
+}
+</style>
+{% endblock %}
