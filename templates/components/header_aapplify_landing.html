@@ -1,0 +1,106 @@
+{% load static %}
+
+<nav class="aapplify-nav sticky top-0 z-50">
+  <div class="container z-20">
+    <div class="flex items-center justify-between h-24">
+      <div class="flex items-center justify-center gap-10">
+        <a class="logo capitalize text-3xl font-extrabold tracking-wide" href="{% url 'main_home' %}">
+          <div class="w-44 max-w-[44vw]">
+            <img class="w-full" src="{% static 'assets/images/company_logo/aapplify_logo.svg' %}" alt="AAPPLIFY">
+          </div>
+        </a>
+
+        <div class="hidden lg:flex items-center top-menu">
+          <div class="group relative flex items-center">
+            <button class="menu-label" tabindex="0">Product</button>
+            <div class="dropdown nav-dropdown absolute left-0 top-full mt-2 w-[760px] shadow-xl rounded-lg z-50">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-6">
+                <a href="{% url 'product_connect' %}" class="block nav-dropdown-link p-3 rounded-lg transition">
+                  <h3 class="font-bold text-primary_c">AAPPLIFY Capabilities</h3>
+                  <p class="text-sm text-gray-700">Connectors, ingestion, normalization, and reusable enterprise context.</p>
+                </a>
+                <a href="{% url 'product_signals' %}" class="block nav-dropdown-link p-3 rounded-lg transition">
+                  <h3 class="font-bold text-primary_c">AAPPLIFY Signals</h3>
+                  <p class="text-sm text-gray-700">Filtered risk intelligence for alerts, escalations, and workflow triggers.</p>
+                </a>
+                <a href="{% url 'product_flow' %}" class="block nav-dropdown-link p-3 rounded-lg transition">
+                  <h3 class="font-bold text-primary_c">AAPPLIFY Orchestration</h3>
+                  <p class="text-sm text-gray-700">Agents, workflows, approvals, exceptions, remediation, and evidence.</p>
+                </a>
+                <a href="{% url 'product_guard' %}" class="block nav-dropdown-link p-3 rounded-lg transition">
+                  <h3 class="font-bold text-primary_c">AAPPLIFY Guard</h3>
+                  <p class="text-sm text-gray-700">Exception governance, expiration, renewal, escalation, and evidence.</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <a href="#problem" class="menu-label">Problem</a>
+          <a href="#product" class="menu-label">Product</a>
+          <a href="#differentiation" class="menu-label">Differentiation</a>
+        </div>
+      </div>
+
+      <div class="hidden lg:flex items-center gap-5">
+        <a href="{% url 'landing_ai_agent_orchestration' %}" class="btn-secondary px-6 py-3 rounded-lg font-semibold">AI-Agent Assurance</a>
+        <a href="{% url 'landing_release_readiness' %}" class="btn-secondary px-6 py-3 rounded-lg font-semibold">Agent Readiness</a>
+        <a href="{% url 'request_demo' %}" class="btn-primary px-6 py-3 rounded-lg font-semibold">Map agent gaps</a>
+      </div>
+
+      <button id="toggleButton" type="button" class="lg:hidden block hamburger_menu">
+        <img class="inline" id="openIcon" src="{% static 'assets/openmenu.svg' %}" alt="Open menu">
+        <img class="hidden" id="closeIcon" src="{% static 'assets/closemenu.svg' %}" alt="Close menu">
+      </button>
+
+      <nav id="mobileMenu" class="fixed h-screen w-96 max-w-[86vw] top-0 right-0 transition-all delay-100 duration-500 border-l border-black translate-x-96 bg-white">
+        <button id="closeSide" type="button" class="hamburger_menu flex justify-center items-center w-full py-5">
+          <img class="border rounded-full p-1 border-black" src="{% static 'assets/closemenu.svg' %}" alt="Close menu">
+        </button>
+        <ul class="py-4 px-10 grid gap-4 font-semibold text-black">
+          <li><a class="mobile_menu_list" href="{% url 'main_home' %}">Home</a></li>
+          <li><a class="mobile_menu_list" href="#problem">Problem</a></li>
+          <li><a class="mobile_menu_list" href="#product">Product</a></li>
+          <li><a class="mobile_menu_list" href="#differentiation">Differentiation</a></li>
+          <li class="grid gap-2">
+            <p class="font-semibold">Product</p>
+            <div class="grid gap-2 pl-2 border-l border-gray-200 text-sm">
+              <a class="mobile_menu_list" href="{% url 'product_connect' %}"><span class="font-semibold text-primary_c">Capabilities</span> connectors + context.</a>
+              <a class="mobile_menu_list" href="{% url 'product_signals' %}"><span class="font-semibold text-primary_c">Signals</span> risk filtering + evidence.</a>
+              <a class="mobile_menu_list" href="{% url 'product_flow' %}"><span class="font-semibold text-primary_c">Orchestration</span> agents + workflows.</a>
+              <a class="mobile_menu_list" href="{% url 'product_guard' %}"><span class="font-semibold text-primary_c">Guard</span> exception governance.</a>
+            </div>
+          </li>
+          <li><a class="mobile_menu_list" href="{% url 'landing_ai_agent_orchestration' %}">AI-Agent Assurance</a></li>
+          <li><a class="mobile_menu_list" href="{% url 'request_demo' %}">Map agent gaps</a></li>
+          <li><a class="mobile_menu_list" href="{% url 'landing_release_readiness' %}">Agent Readiness</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .aapplify-nav {
+    border-bottom: 1px solid rgba(125, 140, 210, 0.24);
+    background: rgba(10, 13, 26, 0.82);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 12px 32px rgba(4, 7, 16, 0.28);
+  }
+  .aapplify-nav .nav-dropdown {
+    border: 1px solid rgba(125, 140, 210, 0.22);
+    background: rgba(13, 17, 32, 0.98);
+  }
+  .aapplify-nav .nav-dropdown-link:hover,
+  .aapplify-nav .nav-dropdown-link:focus {
+    background: rgba(24, 30, 54, 0.9);
+  }
+  .aapplify-nav .hamburger_menu img {
+    filter: invert(1);
+  }
+  .aapplify-nav #mobileMenu {
+    background: #0f1324 !important;
+    color: var(--text-100);
+  }
+  .aapplify-nav #mobileMenu img {
+    filter: invert(1);
+  }
+</style>

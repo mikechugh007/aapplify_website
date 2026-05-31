@@ -1,0 +1,145 @@
+{% load static %}
+
+<style>
+  .faq .answer {
+    max-height: 0;
+    transition: max-height 1s ease;
+    overflow: hidden;
+  }
+  .faq.active .answer {
+    max-height: 340px;
+    animation: fade 1s ease-in-out;
+  }
+  .faq.active img {
+    transform: rotate(0deg);
+  }
+  .faq img {
+    transition: transform 0.5s ease-in;
+  }
+  @keyframes fade {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<section class="py-12 bg-gray-100">
+  <div class="container">
+    <div class="space-y-4">
+      <div class="faq border-b cursor-pointer py-8 border-gray-300">
+        <div class="flex items-center justify-between">
+          <p class="lg:text-4xl text-2xl font-medium pb-4">What is AI Agent Control Assurance?</p>
+          <img class="rotate-180" src="{% static 'assets/icons/uparrow.svg' %}" alt="">
+        </div>
+        <p class="answer text-xl">
+          AI Agent Control Assurance is the practice of proving that AI agents and autonomous workflows had the right owner, identity, access scope, policy decision, approval, remediation path, exception status, and audit-ready evidence before they touched enterprise systems.
+        </p>
+      </div>
+
+      <div class="faq border-b cursor-pointer py-8 border-gray-300">
+        <div class="flex items-center justify-between">
+          <p class="lg:text-4xl text-2xl font-medium pb-4">Who is AAPPLIFY for?</p>
+          <img class="rotate-180" src="{% static 'assets/icons/uparrow.svg' %}" alt="">
+        </div>
+        <p class="answer text-xl">
+          AAPPLIFY is built for CISOs, security assurance, GRC, identity governance, platform security, cloud security, security operations, and risk leaders who need proof that AI-agent and high-risk enterprise actions were controlled.
+        </p>
+      </div>
+
+      <div class="faq border-b cursor-pointer py-8 border-gray-300">
+        <div class="flex items-center justify-between">
+          <p class="lg:text-4xl text-2xl font-medium pb-4">How does this extend beyond AI agents?</p>
+          <img class="rotate-180" src="{% static 'assets/icons/uparrow.svg' %}" alt="">
+        </div>
+        <p class="answer text-xl">
+          It is the discipline of proving that risky access, data, cloud, change, third-party, and AI-agent actions had the right policy decision, owner, approval, remediation or exception, and audit-ready evidence.
+        </p>
+      </div>
+
+      <div class="faq border-b cursor-pointer py-8 border-gray-300">
+        <div class="flex items-center justify-between">
+          <p class="lg:text-4xl text-2xl font-medium pb-4">What does each department see?</p>
+          <img class="rotate-180" src="{% static 'assets/icons/uparrow.svg' %}" alt="">
+        </div>
+        <p class="answer text-xl">
+          Each team sees the control work it owns. Security may focus on exposure remediation, identity on privileged access, data on owner approval, and platform teams on production change impact.
+        </p>
+      </div>
+
+      <div class="faq border-b cursor-pointer py-8 border-gray-300">
+        <div class="flex items-center justify-between">
+          <p class="lg:text-4xl text-2xl font-medium pb-4">What systems do you connect first?</p>
+          <img class="rotate-180" src="{% static 'assets/icons/uparrow.svg' %}" alt="">
+        </div>
+        <p class="answer text-xl">
+          Most pilots start with the systems behind one high-priority workflow: identity providers, change tools, security platforms, data systems, ticketing, cloud logs, and existing policy files.
+        </p>
+      </div>
+
+      <div class="faq border-b cursor-pointer py-8 border-gray-300">
+        <div class="flex items-center justify-between">
+          <p class="lg:text-4xl text-2xl font-medium pb-4">How do signals work?</p>
+          <img class="rotate-180" src="{% static 'assets/icons/uparrow.svg' %}" alt="">
+        </div>
+        <p class="answer text-xl">
+          Signals filter raw events into control decisions. They decide what matters enough to require approval, remediation, exception handling, escalation, or evidence.
+        </p>
+      </div>
+
+      <div class="faq border-b cursor-pointer py-8 border-gray-300">
+        <div class="flex items-center justify-between">
+          <p class="lg:text-4xl text-2xl font-medium pb-4">What does orchestration do?</p>
+          <img class="rotate-180" src="{% static 'assets/icons/uparrow.svg' %}" alt="">
+        </div>
+        <p class="answer text-xl">
+          Workflow turns signals into owned action through approvals, reviews, remediation, exceptions, escalations, and handoffs.
+        </p>
+      </div>
+
+      <div class="faq border-b cursor-pointer py-8 border-gray-300">
+        <div class="flex items-center justify-between">
+          <p class="lg:text-4xl text-2xl font-medium pb-4">How are controls handled?</p>
+          <img class="rotate-180" src="{% static 'assets/icons/uparrow.svg' %}" alt="">
+        </div>
+        <p class="answer text-xl">
+          Controls map policies, owners, approval requirements, remediation steps, exception rules, and evidence obligations back to source systems and workflow decisions.
+        </p>
+      </div>
+
+      <div class="faq border-b cursor-pointer py-8 border-gray-300">
+        <div class="flex items-center justify-between">
+          <p class="lg:text-4xl text-2xl font-medium pb-4">Can AAPPLIFY use existing policy files?</p>
+          <img class="rotate-180" src="{% static 'assets/icons/uparrow.svg' %}" alt="">
+        </div>
+        <p class="answer text-xl">
+          Yes. Modules can process policy files, procedures, runbooks, and control documents so teams can draft workflows, controls, and review logic from the policies they already use.
+        </p>
+      </div>
+
+      <div class="faq border-b cursor-pointer py-8 border-gray-300">
+        <div class="flex items-center justify-between">
+          <p class="lg:text-4xl text-2xl font-medium pb-4">What access does AAPPLIFY need?</p>
+          <img class="rotate-180" src="{% static 'assets/icons/uparrow.svg' %}" alt="">
+        </div>
+        <p class="answer text-xl">
+          AAPPLIFY can start read-only with least-privilege access. Teams can add write actions, approvals, or enforcement only after the workflow and control model is trusted.
+        </p>
+      </div>
+
+      <div class="faq border-b cursor-pointer py-8 border-gray-300">
+        <div class="flex items-center justify-between">
+          <p class="lg:text-4xl text-2xl font-medium pb-4">What is included in a pilot?</p>
+          <img class="rotate-180" src="{% static 'assets/icons/uparrow.svg' %}" alt="">
+        </div>
+        <p class="answer text-xl">
+          A pilot usually includes one high-risk workflow, a small set of connected sources, initial risk signals, one or two approval or remediation paths, and the evidence needed to validate fit.
+        </p>
+      </div>
+    </div>
+
+    <div class="rounded-2xl border border-gray-200 bg-white p-8 shadow mt-10">
+      <h2 class="text-3xl font-bold text-blue-900">Still need to pressure-test the fit?</h2>
+      <p class="text-lg text-gray-700 mt-3">Map one agent control workflow, the systems behind it, and the fastest route to audit-ready control evidence.</p>
+      <a href="{% url 'request_demo' %}" class="inline-flex mt-6 btn-primary px-6 py-3 rounded-lg font-semibold">Map one agent workflow</a>
+    </div>
+  </div>
+</section>

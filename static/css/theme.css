@@ -1,0 +1,253 @@
+body.app-theme {
+  --space-950: #0a0d1a;
+  --space-900: #0f1324;
+  --space-850: #14182e;
+  --space-800: #181d36;
+  --space-700: #22294a;
+  --space-600: #2a335c;
+  --surface-1: rgba(15, 19, 36, 0.94);
+  --surface-2: rgba(20, 24, 45, 0.92);
+  --surface-3: rgba(24, 30, 54, 0.92);
+  --glow-blue: #5ad7ff;
+  --glow-indigo: #5c6eff;
+  --glow-violet: #7c5cff;
+  --glow-amber: #f6b26b;
+  --primary_c: var(--glow-blue);
+  --text-100: #f5f7ff;
+  --text-200: #c9d2ff;
+  --text-300: #9aa6d8;
+  --text-400: #7c89b8;
+  --border-subtle: rgba(125, 140, 210, 0.18);
+  --border-strong: rgba(125, 140, 210, 0.35);
+  background-color: var(--space-950);
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px),
+    radial-gradient(rgba(116, 140, 255, 0.25) 1px, transparent 1px),
+    radial-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+    linear-gradient(180deg, var(--space-950) 0%, var(--space-900) 55%, var(--space-950) 100%);
+  background-size: 140px 140px, 220px 220px, 320px 320px, auto;
+  background-position: 0 0, 40px 80px, 120px 40px, 0 0;
+  color: var(--text-200);
+  min-height: 100vh;
+}
+
+.app-theme .bg-white,
+.app-theme .bg-blue-50,
+.app-theme .bg-green-50,
+.app-theme .bg-yellow-50,
+.app-theme .bg-pink-50,
+.app-theme .bg-cyan-50,
+.app-theme .bg-red-50,
+.app-theme .bg-orange-50,
+.app-theme .bg-slate-50,
+.app-theme .bg-gray-50,
+.app-theme .bg-\[\#F7F6F2\] {
+  background-color: var(--surface-1) !important;
+}
+
+.app-theme .bg-gray-100,
+.app-theme .bg-\[\#172620\] {
+  background-color: var(--surface-2) !important;
+}
+
+.app-theme .bg-gray-200,
+.app-theme .bg-\[\#303E38\] {
+  background-color: var(--surface-3) !important;
+}
+
+.app-theme .bg-blue-700,
+.app-theme .bg-blue-800 {
+  background: linear-gradient(135deg, var(--glow-indigo), var(--glow-violet)) !important;
+  color: #ffffff !important;
+}
+
+.app-theme .bg-blue-900 {
+  background-color: var(--glow-violet) !important;
+  color: #ffffff !important;
+}
+
+.app-theme .bg-orange-400,
+.app-theme .bg-\[\#994D0A\],
+.app-theme .bg-\[\#F7BE38\] {
+  background-color: var(--glow-amber) !important;
+  color: #1b1e2b !important;
+}
+
+.app-theme .bg-green-100 {
+  background-color: rgba(54, 105, 86, 0.35) !important;
+}
+
+.app-theme .border-t,
+.app-theme .border-b,
+.app-theme .border-l,
+.app-theme .border-r {
+  border-color: var(--border-subtle);
+}
+
+.app-theme .from-blue-50,
+.app-theme .from-green-50,
+.app-theme .from-yellow-50,
+.app-theme .from-pink-50,
+.app-theme .from-cyan-50,
+.app-theme .from-red-50,
+.app-theme .from-orange-50,
+.app-theme .from-slate-50,
+.app-theme .from-gray-50,
+.app-theme .from-blue-100 {
+  --tw-gradient-from: var(--space-900) !important;
+  --tw-gradient-to: rgba(10, 13, 26, 0) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+.app-theme .to-white {
+  --tw-gradient-to: var(--space-900) !important;
+}
+
+.app-theme .text-black,
+.app-theme .text-gray-900 {
+  color: var(--text-100) !important;
+}
+
+.app-theme .text-gray-800 {
+  color: var(--text-200) !important;
+}
+
+.app-theme .text-gray-700 {
+  color: var(--text-300) !important;
+}
+
+.app-theme .text-gray-600,
+.app-theme .text-gray-500 {
+  color: var(--text-400) !important;
+}
+
+.app-theme .text-blue-900,
+.app-theme .text-green-900,
+.app-theme .text-yellow-900,
+.app-theme .text-orange-900,
+.app-theme .text-cyan-900,
+.app-theme .text-red-900 {
+  color: var(--text-100) !important;
+}
+
+.app-theme .text-blue-800,
+.app-theme .text-cyan-800,
+.app-theme .text-green-800 {
+  color: var(--glow-blue) !important;
+}
+
+.app-theme .text-yellow-800,
+.app-theme .text-orange-800 {
+  color: var(--glow-amber) !important;
+}
+
+.app-theme .text-blue-600,
+.app-theme .text-blue-500,
+.app-theme .text-primary_c {
+  color: var(--glow-blue) !important;
+}
+
+.app-theme .border-black,
+.app-theme .border-gray-100,
+.app-theme .border-gray-200,
+.app-theme .border-gray-300,
+.app-theme .border-gray-400,
+.app-theme .border-gray-500 {
+  border-color: var(--border-subtle) !important;
+}
+
+.app-theme .border-primary_c {
+  border-color: var(--glow-indigo) !important;
+}
+
+.app-theme .border-blue-800,
+.app-theme .border-green-800 {
+  border-color: var(--glow-blue) !important;
+}
+
+.app-theme .border-yellow-800,
+.app-theme .border-orange-800 {
+  border-color: var(--glow-amber) !important;
+}
+
+.app-theme .hover\:bg-gray-50:hover,
+.app-theme .hover\:bg-blue-50:hover,
+.app-theme .hover\:bg-green-50:hover,
+.app-theme .hover\:bg-yellow-50:hover,
+.app-theme .hover\:bg-orange-50:hover,
+.app-theme .hover\:bg-pink-50:hover {
+  background-color: rgba(24, 30, 54, 0.85) !important;
+}
+
+.app-theme .hover\:text-blue-600:hover,
+.app-theme .hover\:text-primary_c:hover {
+  color: var(--glow-blue) !important;
+}
+
+.app-theme .shadow,
+.app-theme .shadow-lg,
+.app-theme .shadow-xl {
+  box-shadow: 0 16px 32px rgba(6, 10, 20, 0.6) !important;
+}
+
+.app-theme input,
+.app-theme textarea,
+.app-theme select {
+  background-color: rgba(18, 22, 40, 0.9);
+  color: var(--text-100);
+  border-color: rgba(120, 140, 220, 0.35);
+}
+
+.app-theme input::placeholder,
+.app-theme textarea::placeholder {
+  color: var(--text-400);
+}
+
+.app-theme .outline-blue-500 {
+  outline-color: var(--glow-blue) !important;
+}
+
+.app-theme .ring-black {
+  --tw-ring-color: rgba(116, 140, 255, 0.25) !important;
+}
+
+.app-theme .focus\:ring-primary-600:focus,
+.app-theme .focus\:border-primary-600:focus {
+  --tw-ring-color: var(--glow-blue) !important;
+  border-color: var(--glow-blue) !important;
+}
+
+.app-theme ul li::marker {
+  color: var(--glow-blue);
+}
+
+.app-theme .btn-primary {
+  background: linear-gradient(135deg, var(--glow-indigo), var(--glow-violet));
+  color: #ffffff;
+  border: 1px solid rgba(140, 160, 255, 0.4);
+  box-shadow: 0 12px 26px rgba(12, 18, 38, 0.65), 0 0 18px rgba(92, 110, 255, 0.35);
+}
+
+.app-theme .btn-primary:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 14px 30px rgba(12, 18, 38, 0.7), 0 0 22px rgba(90, 215, 255, 0.45);
+}
+
+.app-theme .btn-secondary {
+  background: rgba(18, 22, 40, 0.7);
+  color: var(--text-100);
+  border: 1px solid rgba(130, 150, 230, 0.5);
+}
+
+.app-theme .btn-secondary:hover {
+  background: rgba(24, 30, 54, 0.85);
+}
+
+.app-theme .top-menu .menu-label {
+  color: var(--text-100);
+}
+
+.app-theme .top-menu .menu-label:hover,
+.app-theme .top-menu .menu-label:focus {
+  color: var(--glow-blue);
+}

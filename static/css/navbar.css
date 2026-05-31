@@ -1,0 +1,89 @@
+.container {
+    max-width: 1920px;
+    margin: auto;
+}
+
+@media screen and (max-width: 1400px) {
+    .container {
+        max-width: 1120px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        max-width: 940px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .container {
+        max-width: 700px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 520px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        max-width: 450px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .container {
+        max-width: 350px;
+    }
+}
+
+
+*,html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.top-menu {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    height: 100%;
+}
+.top-menu .menu-label {
+    color: #222;
+    font-size: 1.125rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    transition: color 0.3s, font-weight 0.3s;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+.top-menu .menu-label:hover,
+.top-menu .menu-label:focus {
+    color: var(--primary_c, #2563eb);
+    font-weight: bolder;
+}
+.top-menu .group {
+    position: relative;
+}
+.top-menu .group .dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 100;
+    min-width: 300px;
+    margin-top: 0.5rem;
+}
+.top-menu .group:hover .dropdown,
+.top-menu .group:focus-within .dropdown {
+    display: block;
+}
+}

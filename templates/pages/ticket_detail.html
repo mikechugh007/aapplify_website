@@ -1,0 +1,101 @@
+{% extends "mainbase.html" %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    .ck-editor-container textarea {
+        width: 100% !important;
+        padding: 1rem !important;
+        border: 1px sold gray !important;
+        background: #CBD5E1;
+    }
+</style>
+    <section class="flex flex-col items-center justify-center container messaging-main">
+        {% comment %} <h2 class="text-4xl font-bold text-center mb-8">Messages for Ticket #{{ ticket.pk }}</h2> {% endcomment %}
+        <div class="w-full">
+            {% if messages %}
+            <div class="h-screen overflow-y-auto p-4 pb-36 messaging-chat">
+                {% for message in messages %}
+                    {% if message.user.is_staff %}
+                        <!-- Incoming Message (from Staff) -->
+                        <div class="flex mb-4 cursor-pointer">
+                            <div class="w-9 h-9 rounded-full flex items-center justify-center mr-2">
+                                <img src="https://placehold.co/200x/ffa8e4/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
+                                     alt="Staff Avatar"
+                                     class="w-8 h-8 rounded-full">
+                            </div>
+                            <div class="flex max-w-96 bg-white rounded-lg p-3 gap-3">
+                                <p class="text-gray-700">{{ message.content|safe }}</p>
+                            </div>
+                        </div>
+                    {% else %}
+                        <!-- Outgoing Message (from User) -->
+                        <div class="flex justify-end mb-4 cursor-pointer">
+                            <div class="flex max-w-96 bg-indigo-500 text-white rounded-lg p-3 gap-3">
+                                <p>{{ message.content|safe }}</p>
+                            </div>
+                            <div class="w-9 h-9 rounded-full flex items-center justify-center ml-2">
+                                <img src="https://placehold.co/200x/b7a8ff/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
+                                     alt="User Avatar"
+                                     class="w-8 h-8 rounded-full">
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            {% else %}
+                <p>No messages found for this ticket.</p>
+            {% endif %}
+        <div class="w-full flex justify-start">
+            <form method="post" class="w-full">
+                {% csrf_token %}
+                <div class="mb-4 w-full">
+                    {{ form.content|safe }}  <!-- Render the content field directly -->
+                </div>
+                <button type="submit" class="py-4 px-12 bg-blue-800 rounded-lg text-white text-xl mt-4">Send Message</button>
+            </form>
+        </div>
+        <br>
+        <a href="{% url 'main_token' %}"  class="text-gray-900 bg-[#F7BE38] hover:bg-[#F7BE38]/90 focus:ring-4 focus:outline-none focus:ring-[#F7BE38]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#F7BE38]/50 me-2 mb-2">
+            <svg class="w-4 h-4 me-2 -ms-1" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="paypal" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M111.4 295.9c-3.5 19.2-17.4 108.7-21.5 134-.3 1.8-1 2.5-3 2.5H12.3c-7.6 0-13.1-6.6-12.1-13.9L58.8 46.6c1.5-9.6 10.1-16.9 20-16.9 152.3 0 165.1-3.7 204 11.4 60.1 23.3 65.6 79.5 44 140.3-21.5 62.6-72.5 89.5-140.1 90.3-43.4 .7-69.5-7-75.3 24.2zM357.1 152c-1.8-1.3-2.5-1.8-3 1.3-2 11.4-5.1 22.5-8.8 33.6-39.9 113.8-150.5 103.9-204.5 103.9-6.1 0-10.1 3.3-10.9 9.4-22.6 140.4-27.1 169.7-27.1 169.7-1 7.1 3.5 12.9 10.6 12.9h63.5c8.6 0 15.7-6.3 17.4-14.9 .7-5.4-1.1 6.1 14.4-91.3 4.6-22 14.3-19.7 29.3-19.7 71 0 126.4-28.8 142.9-112.3 6.5-34.8 4.6-71.4-23.8-92.6z"></path></svg>
+            Back to My Tickets
+        </a>
+    </section>
+
+{% endblock content %}
+
+{% block javascript %}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var containers = document.querySelectorAll('.messaging-chat, .messaging-main');
+
+        containers.forEach(function(container) {
+            if (container) {
+                // Scroll to the bottom
+                container.scrollTop = container.scrollHeight;
+            }
+        });
+    });
+
+    // Use MutationObserver to scroll when new messages are added dynamically
+    var targets = document.querySelectorAll('.messaging-chat, .messaging-main');
+
+    targets.forEach(function(targetNode) {
+        if (targetNode) {
+            var config = { childList: true, subtree: true };
+
+            var callback = function(mutationsList, observer) {
+                for (var mutation of mutationsList) {
+                    if (mutation.type === 'childList') {
+                        targetNode.scrollTop = targetNode.scrollHeight;
+                    }
+                }
+            };
+
+            var observer = new MutationObserver(callback);
+            observer.observe(targetNode, config);
+        }
+    });
+</script>
+{% endblock javascript %}

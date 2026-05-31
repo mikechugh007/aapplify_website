@@ -1,0 +1,34 @@
+{% extends 'mainbase.html' %}
+{% load static %}
+
+{% block content %}
+<section class="py-20 bg-gradient-to-br from-blue-50 to-white">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <p class="text-sm font-semibold text-primary_c uppercase tracking-[0.2em]">Team</p>
+    <h1 class="text-5xl font-extrabold text-blue-900 mt-4 mb-6">The people building AAPPLIFY control assurance.</h1>
+    <p class="text-xl text-gray-700">
+      Our team is focused on helping enterprises prove risky access, data, cloud, change, and AI-agent actions were approved, remediated, excepted, and audit-ready.
+    </p>
+    <div class="grid md:grid-cols-3 gap-8 mt-12">
+      <div class="bg-white rounded-2xl shadow p-6">
+        <img src="{% static 'assets/images/team1.png' %}" alt="Mike Chugh" class="mx-auto rounded-full w-24 h-24 mb-4">
+        <h2 class="text-xl font-bold text-blue-900 text-center">Mike Chugh</h2>
+        <p class="text-gray-600 text-center">CEO</p>
+        <p class="text-gray-700 mt-4 text-center">Leads product direction, customer conversations, and the control-plane workflow we bring into each pilot.</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-6">
+        <img src="{% static 'assets/images/team2.png' %}" alt="Stacy Adams" class="mx-auto rounded-full w-24 h-24 mb-4">
+        <h2 class="text-xl font-bold text-blue-900 text-center">Stacy Adams</h2>
+        <p class="text-gray-600 text-center">Co-Founder</p>
+        <p class="text-gray-700 mt-4 text-center">Works across onboarding, customer fit, and rollout planning so teams can move from discovery to a focused pilot quickly.</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-6">
+        <img src="{% static 'assets/images/team3.png' %}" alt="Denys Lee" class="mx-auto rounded-full w-24 h-24 mb-4">
+        <h2 class="text-xl font-bold text-blue-900 text-center">Denys Lee</h2>
+        <p class="text-gray-600 text-center">Team Member</p>
+        <p class="text-gray-700 mt-4 text-center">Supports the product and technical workflows that map operational context into signals, controls, and governed response.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

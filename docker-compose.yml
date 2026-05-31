@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - DEBUG=False
+    # depends_on:
+    #   - db
+    networks:
+      - app-network
+
+  # db:
+  #   image: keinos/sqlite3:latest
+  #   volumes:
+  #     - ./db.sqlite3:/app/db.sqlite3
+  #   networks:
+  #     - app-network
+    
+    
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
+    external: true
+#Volumes
+volumes:
+  dbdata:
+    driver: local

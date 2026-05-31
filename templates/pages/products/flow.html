@@ -1,0 +1,113 @@
+{% extends 'mainbase.html' %}
+{% block content %}
+<section class="py-16 bg-gradient-to-br from-green-50 to-white">
+  <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+    <div class="md:w-1/2">
+      <h1 class="text-5xl font-extrabold text-green-900 mb-4">Design, automate, and orchestrate.<span class="text-primary_c"> With ease.</span></h1>
+      <p class="text-xl text-gray-700 mb-6">
+        <span class="font-bold text-primary_c">AAPPLIFY Flow</span> is your visual low-code builder. It lets teams design, automate, and orchestrate end-to-end workflows in minutes. Flow uses AI to recommend steps, optimize processes, and ensure seamless automation.
+      </p>
+      <div class="flex gap-4 mb-8">
+        <a href="{% url 'request_demo' %}" class="bg-green-800 text-white px-8 py-3 rounded-lg font-bold text-lg shadow hover:bg-green-900 transition">Map agent gaps</a>
+        <a href="#features" class="border-2 border-green-800 text-green-800 px-8 py-3 rounded-lg font-bold text-lg hover:bg-green-50 transition">View features</a>
+      </div>
+      <ul class="list-disc pl-6 text-lg text-gray-800 space-y-2">
+        <li>Visual workflow designer</li>
+        <li>Low-code automation</li>
+        <li>AI-powered recommendations</li>
+        <li>End-to-end orchestration</li>
+      </ul>
+    </div>
+    <div class="md:w-1/2 flex flex-col items-center">
+      <!-- Product-themed SVG illustration: Flow automation -->
+      <div class="w-full max-w-md mb-6 animate-fade-in">
+        <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+          <rect x="0" y="0" width="400" height="300" rx="32" fill="#bbf7d0"/>
+          <!-- Workflow steps -->
+          <rect x="80" y="100" width="60" height="40" rx="10" fill="#22d3ee"/>
+          <rect x="180" y="100" width="60" height="40" rx="10" fill="#f59e42"/>
+          <rect x="280" y="100" width="60" height="40" rx="10" fill="#2563eb"/>
+          <!-- Arrows between steps -->
+          <path d="M140 120 L180 120" stroke="#0ea5e9" stroke-width="4" marker-end="url(#arrow)"/>
+          <path d="M240 120 L280 120" stroke="#0ea5e9" stroke-width="4" marker-end="url(#arrow)"/>
+          <text x="200" y="180" text-anchor="middle" fill="#16a34a" font-size="22" font-weight="bold">Flow</text>
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L10,5 L0,10 L4,5 Z" fill="#0ea5e9" />
+            </marker>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-white border-t">
+  <div class="container mx-auto px-4 max-w-4xl">
+    <h2 class="text-3xl font-bold text-primary_c mb-4">What is Flow?</h2>
+    <p class="text-lg text-gray-700 mb-6">
+      <span class="font-bold text-primary_c">AAPPLIFY Flow</span> leverages AI and ML to help teams design, automate, and orchestrate workflows. It provides a visual designer, low-code automation, and smart recommendations for seamless process optimization.
+    </p>
+    <div class="flex flex-col md:flex-row gap-8 items-center">
+      <!-- Product Vision SVG: Workflow automation -->
+      <div class="w-full max-w-xs animate-fade-in">
+        <svg viewBox="0 0 300 220" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+          <rect x="0" y="0" width="300" height="220" rx="24" fill="#bbf7d0"/>
+          <!-- Workflow steps -->
+          <rect x="60" y="80" width="50" height="30" rx="8" fill="#22d3ee"/>
+          <rect x="125" y="80" width="50" height="30" rx="8" fill="#f59e42"/>
+          <rect x="190" y="80" width="50" height="30" rx="8" fill="#2563eb"/>
+          <!-- Arrows between steps -->
+          <path d="M110 95 L125 95" stroke="#0ea5e9" stroke-width="3" marker-end="url(#arrow)"/>
+          <path d="M175 95 L190 95" stroke="#0ea5e9" stroke-width="3" marker-end="url(#arrow)"/>
+          <text x="150" y="140" text-anchor="middle" fill="#16a34a" font-size="18" font-weight="bold">Flow</text>
+          <defs>
+            <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L8,4 L0,8 L3,4 Z" fill="#0ea5e9" />
+            </marker>
+          </defs>
+        </svg>
+      </div>
+      <ul class="list-disc pl-6 text-lg text-gray-800 space-y-2">
+        <li>Visual workflow designer</li>
+        <li>Low-code automation</li>
+        <li>AI-powered recommendations</li>
+        <li>End-to-end orchestration</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="py-16 bg-green-50 border-t">
+  <div class="container mx-auto px-4 max-w-4xl">
+    <h2 class="text-2xl font-bold text-green-900 mb-6">Key Features</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828815.png" alt="Designer" class="w-16 h-16 mb-4" />
+        <h3 class="font-bold text-lg mb-2">Designer</h3>
+        <p class="text-gray-600 text-center">Visual builder for drag-and-drop workflow creation.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828824.png" alt="Automation" class="w-16 h-16 mb-4" />
+        <h3 class="font-bold text-lg mb-2">Automation</h3>
+        <p class="text-gray-600 text-center">Low-code automation for rapid deployment.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828836.png" alt="Orchestration" class="w-16 h-16 mb-4" />
+        <h3 class="font-bold text-lg mb-2">Orchestration</h3>
+        <p class="text-gray-600 text-center">End-to-end orchestration and optimization of workflows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+.animate-fade-in {
+  animation: fade-in 1.2s ease;
+}
+</style>
+{% endblock %}

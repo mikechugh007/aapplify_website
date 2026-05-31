@@ -1,0 +1,799 @@
+{% extends "mainbase.html" %}
+{% load static %}
+
+{% block content %}
+<main class="home-control">
+  <section class="home-hero">
+    <div class="container mx-auto px-4 py-20">
+      <div class="grid lg:grid-cols-[1.02fr_0.98fr] gap-12 items-center">
+        <div class="hero-part1">
+          <p class="home-eyebrow">AI Agent Control Assurance</p>
+          <h1 class="home-title mt-4">Prove every AI-agent action was controlled.</h1>
+          <p class="home-sub mt-6">
+            AAPPLIFY connects identity, data, security, change, and policy systems to prove AI agents, automations, and delegated identities were owned, scoped, approved, remediated, excepted, and audit-ready before they touched enterprise systems.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="{% url 'request_demo' %}" class="btn-primary px-6 py-3 rounded-lg font-semibold">Map your agent control gaps</a>
+            <a href="#roi" class="btn-secondary px-6 py-3 rounded-lg font-semibold">Calculate manual effort reduction</a>
+          </div>
+          <div class="home-proof mt-8">
+            <span>Agent access</span>
+            <span>Service accounts</span>
+            <span>API permissions</span>
+            <span>Audit-ready evidence</span>
+          </div>
+        </div>
+
+        <div class="hero-part2">
+          <div class="home-console" aria-label="AAPPLIFY AI agent control assurance preview">
+            <div class="home-console-top">
+              <div>
+                <p>Agent control review</p>
+                <h2>Tool-Calling Workflow</h2>
+              </div>
+              <span>Evidence ready</span>
+            </div>
+            <div class="home-domain-grid">
+              <div class="is-active">
+                <p>Agents</p>
+                <strong>42</strong>
+                <span>actions reviewed</span>
+              </div>
+              <div>
+                <p>Access</p>
+                <strong>11</strong>
+                <span>excessive grants</span>
+              </div>
+              <div>
+                <p>Data</p>
+                <strong>7</strong>
+                <span>owner approvals</span>
+              </div>
+              <div>
+                <p>Exceptions</p>
+                <strong>3</strong>
+                <span>near expiry</span>
+              </div>
+            </div>
+            <div class="home-action-card">
+              <p class="home-card-label">Agent action to audit-ready proof</p>
+              <h3>Agent calls an API that touches customer records</h3>
+              <div class="home-flow">
+                <span>Action</span>
+                <i></i>
+                <span>Policy</span>
+                <i></i>
+                <span>Evidence</span>
+              </div>
+              <p class="home-card-copy">AAPPLIFY links the agent identity, service account, data sensitivity, approval, remediation, exception status, and evidence package.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="problem" class="home-section home-panel">
+    <div class="container mx-auto px-4">
+      <div class="grid lg:grid-cols-[0.78fr_1.22fr] gap-10 items-start">
+        <div>
+          <p class="home-eyebrow">The problem</p>
+          <h2 class="home-section-title mt-3">AI agents are acting faster than your controls can prove.</h2>
+        </div>
+        <div>
+          <p class="home-section-sub">
+            AI agents now call APIs, access SaaS apps, query data, create tickets, trigger workflows, modify records, and operate through service accounts or delegated identities. But most companies cannot prove which agent acted, what identity it used, what systems or data it touched, which policy applied, who approved the action, whether the access was time-bound, whether an exception was granted, whether remediation was completed, or what evidence proves the control operated.
+          </p>
+          <div class="mt-8 grid sm:grid-cols-2 gap-4">
+            <div class="home-card"><p>An AI agent receives access through an Okta group.</p></div>
+            <div class="home-card"><p>A service account used by an agent gets access to production data.</p></div>
+            <div class="home-card"><p>An agent calls an API that touches customer or financial records.</p></div>
+            <div class="home-card"><p>A vendor-built automation receives standing SaaS access.</p></div>
+            <div class="home-card"><p>An agent is deployed before identity, data, and security controls are validated.</p></div>
+            <div class="home-card"><p>A temporary exception for agent access never expires.</p></div>
+            <div class="home-card"><p>A security finding is marked remediated without complete control evidence.</p></div>
+            <div class="home-card is-accent"><p>AAPPLIFY turns AI-agent activity into governed, evidenced control outcomes.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works" class="home-section home-panel">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl">
+        <p class="home-eyebrow">What AAPPLIFY does</p>
+        <h2 class="home-section-title mt-3">From agent action to audit-ready proof.</h2>
+        <p class="home-section-sub mt-4">AAPPLIFY does not simply monitor agents. It proves agent actions were controlled.</p>
+      </div>
+      <div class="home-loop mt-10">
+        <div>
+          <p class="home-eyebrow">Operating flow</p>
+          <h3>Agent action -> identity context -> data/security/change context -> policy decision -> approval/remediation/exception -> audit-ready evidence.</h3>
+        </div>
+        <div class="home-steps">
+          <div><b>01</b><span>Detect the agent action.</span></div>
+          <div><b>02</b><span>Map identity, owner, system, data, security, and change context.</span></div>
+          <div><b>03</b><span>Match the action to policy and control requirements.</span></div>
+          <div><b>04</b><span>Route approval, remediation, review, or exception workflows.</span></div>
+          <div><b>05</b><span>Track closure until the control loop is complete.</span></div>
+          <div><b>06</b><span>Generate audit-ready evidence.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="use-cases" class="home-domain-strip">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl">
+        <p class="home-eyebrow">Agent-heavy use cases</p>
+        <h2 class="home-section-title mt-3">Control the agent workflows that create enterprise risk.</h2>
+      </div>
+      <div class="mt-10 grid md:grid-cols-2 xl:grid-cols-5 gap-6">
+        <a href="{% url 'landing_identity' %}" class="home-module">
+          <span>AI-agent access assurance</span>
+          <h3>Map agent identity and access.</h3>
+          <p>Map agent identities, service accounts, Okta groups, SaaS permissions, API tokens, delegated access, and privileged roles.</p>
+          <strong>Prove agent access was owned, justified, approved, scoped, time-bound, and evidenced.</strong>
+        </a>
+        <a href="{% url 'landing_data' %}" class="home-module">
+          <span>AI-agent sensitive-data assurance</span>
+          <h3>Govern agent data reach.</h3>
+          <p>Govern agent access to customer data, PII, financial data, healthcare data, production logs, regulated datasets, and analytics environments.</p>
+          <strong>Prove sensitive-data actions had data-owner approval, privacy review, policy validation, and audit evidence.</strong>
+        </a>
+        <a href="{% url 'landing_release_readiness' %}" class="home-module">
+          <span>AI-agent production readiness</span>
+          <h3>Validate before deployment.</h3>
+          <p>Validate agent ownership, identity scope, tool access, API permissions, data reach, security exposure, release approval, and required evidence before deployment.</p>
+          <strong>Approve, hold, remediate, or except an agent before it enters production workflows.</strong>
+        </a>
+        <a href="{% url 'product_guard' %}" class="home-module">
+          <span>AI-agent exception governance</span>
+          <h3>Make accepted risk expire.</h3>
+          <p>Track temporary risk acceptance for agents, service accounts, tools, API access, sensitive-data access, or production deployments.</p>
+          <strong>Reduce stale exceptions and prove accepted risk was reviewed, owned, time-bound, and governed.</strong>
+        </a>
+        <a href="{% url 'landing_security' %}" class="home-module">
+          <span>AI-agent remediation evidence</span>
+          <h3>Connect findings to proof.</h3>
+          <p>Connect risky agent findings, excessive permissions, policy violations, cloud exposure, or sensitive-data reach to remediation ownership and closure evidence.</p>
+          <strong>Prove each risk was remediated, accepted, escalated, or closed with evidence.</strong>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="platform" class="home-section home-panel">
+    <div class="container mx-auto px-4">
+      <div class="grid lg:grid-cols-[0.78fr_1.22fr] gap-10 items-start">
+        <div>
+          <p class="home-eyebrow">Platform</p>
+          <h2 class="home-section-title mt-3">One control evidence layer across the systems agents use.</h2>
+        </div>
+        <div>
+          <p class="home-section-sub">
+            AAPPLIFY is designed to connect with the systems where AI-agent identity, access, data, security, change, and compliance work already happens.
+          </p>
+          <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="home-card"><h3>Identity</h3><p>Okta, Microsoft Entra, SailPoint, CyberArk</p></div>
+            <div class="home-card"><h3>Workflow</h3><p>ServiceNow, Jira, Slack, Teams</p></div>
+            <div class="home-card"><h3>Security</h3><p>Wiz, CrowdStrike, Palo Alto, Tenable, SIEM/SOC tools</p></div>
+            <div class="home-card"><h3>Data</h3><p>Snowflake, Databricks, data catalogs, DSPM tools</p></div>
+            <div class="home-card"><h3>Compliance</h3><p>Vanta, Drata, GRC platforms</p></div>
+            <div class="home-card"><h3>Engineering</h3><p>GitHub, CI/CD, release systems</p></div>
+            <div class="home-card lg:col-span-3"><h3>AI systems</h3><p>Agents, automations, copilots, orchestration frameworks, tool-calling workflows, and MCP-style tool access</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="modules" class="home-section home-panel">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl">
+        <p class="home-eyebrow">Modules</p>
+        <h2 class="home-section-title mt-3">Modules for AI-agent control assurance.</h2>
+      </div>
+      <div class="mt-10 grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <a href="{% url 'product_connect' %}" class="home-module">
+          <span>Agent Identity and Access Assurance</span>
+          <h3>Risky agent permissions.</h3>
+          <p>Detect risky agent access changes, privileged grants, stale ownership, third-party access, service accounts, machine identities, delegated users, and excessive permissions. Route review, remediation, revocation, or exception workflows.</p>
+        </a>
+        <a href="{% url 'product_normalize' %}" class="home-module">
+          <span>Agent Data Policy Assurance</span>
+          <h3>Data-use rules and evidence.</h3>
+          <p>Map agent actions to sensitive-data context, data-owner approval, privacy requirements, retention policies, data-use rules, and evidence obligations.</p>
+        </a>
+        <a href="{% url 'product_flow' %}" class="home-module">
+          <span>Agent Change and Release Assurance</span>
+          <h3>Deploy, hold, remediate, or except.</h3>
+          <p>Determine whether AI-agent deployments, production changes, infrastructure updates, tool-access changes, or workflow releases should proceed, hold, require remediation, or receive exception approval.</p>
+        </a>
+        <a href="{% url 'product_signals' %}" class="home-module">
+          <span>Agent Security Exposure Assurance</span>
+          <h3>Agent-access paths to closure.</h3>
+          <p>Connect vulnerabilities, cloud posture gaps, risky configurations, exposed APIs, excessive permissions, and agent-access paths to ownership, remediation, exceptions, and evidence.</p>
+        </a>
+        <a href="{% url 'product_console' %}" class="home-module">
+          <span>Control Evidence Graph</span>
+          <h3>A persistent proof record.</h3>
+          <p>Create a persistent record of what happened, which agent or identity acted, what systems or data were touched, which policy applied, who approved, what changed, what was remediated, and what evidence proves the control operated.</p>
+        </a>
+        <a href="{% url 'product_guard' %}" class="home-module">
+          <span>Exception Governance</span>
+          <h3>Agent risk acceptance that expires.</h3>
+          <p>Track temporary risk acceptance, compensating controls, expiration dates, stale exceptions, renewal decisions, and escalation paths for AI-agent and high-risk enterprise actions.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="manual-effort" class="home-section home-panel">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl">
+        <p class="home-eyebrow">Manual effort reduction</p>
+        <h2 class="home-section-title mt-3">Reduce the manual work of proving AI-agent controls.</h2>
+        <p class="home-section-sub mt-4">AAPPLIFY helps teams replace manual evidence collection, approval chasing, exception tracking, remediation follow-up, and audit reconstruction with a repeatable control assurance workflow.</p>
+      </div>
+      <div class="home-compare mt-10">
+        <div class="home-compare-head">
+          <span>Control task</span>
+          <span>Manual process today</span>
+          <span>With AAPPLIFY</span>
+        </div>
+        <div><strong>Agent ownership review</strong><p>Search tickets, spreadsheets, identity records, and Slack</p><p>Create a persistent owner and control record</p></div>
+        <div><strong>Agent access review</strong><p>Manually inspect Okta groups, SaaS roles, service accounts, and permissions</p><p>Map agent access context into one review workflow</p></div>
+        <div><strong>Sensitive-data approval</strong><p>Chase data owners and privacy reviewers</p><p>Route approval based on policy and data sensitivity</p></div>
+        <div><strong>Exception tracking</strong><p>Track temporary approvals in tickets or spreadsheets</p><p>Manage expiration, renewal, escalation, and evidence</p></div>
+        <div><strong>Remediation proof</strong><p>Reconstruct screenshots, logs, and ticket history</p><p>Generate a linked evidence package</p></div>
+        <div><strong>Audit preparation</strong><p>Rebuild the control story manually</p><p>Reuse audit-ready control records</p></div>
+      </div>
+      <p class="home-section-sub mt-8">AAPPLIFY reduces the human effort required to prove that AI-agent risk was reviewed, approved, remediated, or accepted.</p>
+    </div>
+  </section>
+
+  <section id="roi" class="home-section home-panel">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl">
+        <p class="home-eyebrow">ROI model</p>
+        <h2 class="home-section-title mt-3">Estimate the effort saved by automating control assurance.</h2>
+        <p class="home-section-sub mt-4">Use AAPPLIFY to estimate manual effort reduction across agent access reviews, exception management, remediation evidence, audit preparation, and board reporting.</p>
+        <p class="home-disclaimer mt-4">Use this model to estimate effort reduction from your own assumptions. Default values are illustrative and should be validated in a focused pilot.</p>
+      </div>
+
+      <div class="home-calculator mt-10">
+        <div class="home-calc-inputs">
+          <label>Agent actions reviewed / month<input id="agentActions" type="number" value="150" min="0"></label>
+          <label>Hours saved per review<input id="reviewHours" type="number" value="1" min="0" step="0.25"></label>
+          <label>Exceptions managed / month<input id="exceptions" type="number" value="40" min="0"></label>
+          <label>Hours saved per exception<input id="exceptionHours" type="number" value="1.5" min="0" step="0.25"></label>
+          <label>Remediation items closed / month<input id="remediations" type="number" value="35" min="0"></label>
+          <label>Hours saved per item<input id="remediationHours" type="number" value="1" min="0" step="0.25"></label>
+          <label>Evidence requests / month<input id="evidenceRequests" type="number" value="20" min="0"></label>
+          <label>Hours saved per request<input id="evidenceHours" type="number" value="2" min="0" step="0.25"></label>
+          <label>Board/compliance reporting hours saved<input id="reportingHours" type="number" value="10" min="0" step="0.25"></label>
+          <label>Fully loaded hourly cost<input id="hourlyCost" type="number" value="125" min="0"></label>
+          <label>Annual AAPPLIFY cost<input id="annualCost" type="number" value="120000" min="0"></label>
+        </div>
+        <div class="home-calc-results">
+          <p class="home-eyebrow">Estimated output</p>
+          <div><span>Monthly hours saved</span><strong id="monthlyHours">260</strong></div>
+          <div><span>Annual labor savings</span><strong id="annualSavings">$390,000</strong></div>
+          <div><span>Estimated ROI</span><strong id="estimatedRoi">225%</strong></div>
+          <p>Formula: monthly hours saved x 12 x fully loaded hourly cost. ROI = (annual labor savings - annual AAPPLIFY cost) / annual AAPPLIFY cost.</p>
+        </div>
+      </div>
+
+      <div class="home-compare mt-10">
+        <div class="home-compare-head">
+          <span>Scenario</span>
+          <span>Manual work reduced</span>
+          <span>Example-only estimate</span>
+        </div>
+        <div><strong>Focused pilot</strong><p>30 agent/access reviews, 10 exceptions, limited audit evidence</p><p>45 hrs/month, 540 hrs/year, $67,500 annual labor savings at $125/hr</p></div>
+        <div><strong>Mid-size program</strong><p>150 agent/access reviews, 40 exceptions, remediation evidence, quarterly audit prep</p><p>260 hrs/month, 3,120 hrs/year, $390,000 annual labor savings at $125/hr</p></div>
+        <div><strong>Enterprise program</strong><p>500 agent/access reviews, 150 exceptions, security remediation, board/audit reporting</p><p>850 hrs/month, 10,200 hrs/year, $1,275,000 annual labor savings at $125/hr</p></div>
+      </div>
+      <p class="home-disclaimer mt-4">Illustrative examples based on assumptions. Not a guaranteed result or customer-proven benchmark.</p>
+    </div>
+  </section>
+
+  <section id="board-audit" class="home-section home-panel">
+    <div class="container mx-auto px-4">
+      <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-start">
+        <div>
+          <p class="home-eyebrow">Board and audit proof</p>
+          <h2 class="home-section-title mt-3">Turn AI-agent control work into measurable security impact.</h2>
+          <p class="home-section-sub mt-4">AAPPLIFY turns AI-agent control work into measurable security impact.</p>
+        </div>
+        <div class="home-impact-grid">
+          <span>Agent actions reviewed</span>
+          <span>Agent access paths mapped</span>
+          <span>Unowned agents identified</span>
+          <span>Excessive permissions remediated</span>
+          <span>Sensitive-data actions reviewed</span>
+          <span>Exceptions expired or renewed</span>
+          <span>Remediation evidence generated</span>
+          <span>Audit evidence requests fulfilled</span>
+          <span>Manual review hours saved</span>
+          <span>Agent actions with complete evidence</span>
+          <span>Control gaps closed</span>
+          <span>Standing access converted to time-bound access</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="differentiation" class="home-section home-panel">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl">
+        <p class="home-eyebrow">Differentiation</p>
+        <h2 class="home-section-title mt-3">Not another agent monitor. Not another scanner. Not another GRC checklist.</h2>
+      </div>
+      <div class="home-compare mt-10">
+        <div class="home-compare-head">
+          <span>Existing tool</span>
+          <span>What it does</span>
+          <span>What AAPPLIFY adds</span>
+        </div>
+        <div><strong>AI-agent monitoring tools</strong><p>Track agent activity, usage, errors, latency, or runtime events</p><p>Proves agent actions had ownership, approval, policy validation, remediation, exception handling, and evidence</p></div>
+        <div><strong>Identity systems</strong><p>Manage users, groups, roles, service accounts, and access</p><p>Proves risky agent access was justified, scoped, approved, time-bound, and evidenced</p></div>
+        <div><strong>Security scanners</strong><p>Find vulnerabilities, exposures, and posture gaps</p><p>Proves remediation, exception handling, ownership, and control closure</p></div>
+        <div><strong>Workflow tools</strong><p>Route tickets and tasks</p><p>Adds policy context, control requirements, evidence, escalation, and closure tracking</p></div>
+        <div><strong>GRC tools</strong><p>Track controls, audits, policies, and compliance programs</p><p>Proves controls operated during real AI-agent and high-risk enterprise actions</p></div>
+        <div><strong>AI governance tools</strong><p>Identify AI risks, policies, and governance requirements</p><p>Connects AI-agent actions to identity, data, change, approval, remediation, exception, and evidence workflows</p></div>
+      </div>
+      <p class="home-section-sub mt-8">AAPPLIFY connects the gap between knowing AI-agent risk exists and proving it was governed.</p>
+    </div>
+  </section>
+
+  <section id="pilot" class="home-section home-panel">
+    <div class="container mx-auto px-4">
+      <div class="grid lg:grid-cols-[0.85fr_1.15fr] gap-10 items-start">
+        <div>
+          <p class="home-eyebrow">Pilot entry point</p>
+          <h2 class="home-section-title mt-3">Start with one AI-agent control workflow.</h2>
+          <p class="home-section-sub mt-4">Most teams do not need another platform rollout. They need proof that one painful AI-agent control workflow can be governed end to end.</p>
+        </div>
+        <div class="home-impact-grid">
+          <span>AI-agent access review</span>
+          <span>Service-account and machine-identity ownership</span>
+          <span>Sensitive-data access approval</span>
+          <span>Agent production readiness</span>
+          <span>Stale exception cleanup</span>
+          <span>Remediation evidence for risky agent findings</span>
+        </div>
+      </div>
+      <p class="home-section-sub mt-8">AAPPLIFY maps the systems involved, identifies missing control evidence, routes the required action, and produces an audit-ready evidence record.</p>
+      <a href="{% url 'request_demo' %}" class="inline-flex mt-6 btn-primary px-6 py-3 rounded-lg font-semibold">Map one agent control workflow</a>
+    </div>
+  </section>
+
+  <section id="closing" class="home-cta-section home-panel">
+    <div class="container mx-auto px-4">
+      <div class="home-cta">
+        <div>
+          <p class="home-eyebrow">Control before exposure</p>
+          <h2>Control AI-agent risk before it becomes audit, security, or board exposure.</h2>
+          <p>Connect identity, security, data, change, and policy context to see where agent control evidence is missing, where exceptions are stale, and where autonomous actions are moving faster than governance.</p>
+        </div>
+        <div class="flex flex-wrap lg:justify-end gap-4">
+          <a href="{% url 'request_demo' %}" class="btn-primary px-6 py-3 rounded-lg font-semibold">Map your agent control gaps</a>
+          <a href="#roi" class="btn-secondary px-6 py-3 rounded-lg font-semibold">Estimate manual effort reduction</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+  function updateRoiCalculator() {
+    const value = (id) => Number(document.getElementById(id)?.value || 0);
+    const monthlyHours =
+      (value("agentActions") * value("reviewHours")) +
+      (value("exceptions") * value("exceptionHours")) +
+      (value("remediations") * value("remediationHours")) +
+      (value("evidenceRequests") * value("evidenceHours")) +
+      value("reportingHours");
+    const annualSavings = monthlyHours * 12 * value("hourlyCost");
+    const annualCost = value("annualCost");
+    const roi = annualCost > 0 ? ((annualSavings - annualCost) / annualCost) * 100 : 0;
+    document.getElementById("monthlyHours").textContent = Math.round(monthlyHours).toLocaleString();
+    document.getElementById("annualSavings").textContent = annualSavings.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+    document.getElementById("estimatedRoi").textContent = `${Math.round(roi).toLocaleString()}%`;
+  }
+  document.addEventListener("input", (event) => {
+    if (event.target.closest(".home-calculator")) updateRoiCalculator();
+  });
+  document.addEventListener("DOMContentLoaded", updateRoiCalculator);
+</script>
+
+<style>
+  .home-hero,
+  .home-panel {
+    background: linear-gradient(180deg, rgba(8, 10, 18, 0.98) 0%, rgba(12, 16, 31, 0.94) 100%);
+  }
+  .home-section {
+    padding: 88px 0;
+    border-top: 1px solid var(--border-subtle);
+  }
+  .home-domain-strip {
+    padding: 76px 0;
+    border-top: 1px solid var(--border-subtle);
+    background: rgba(10, 13, 26, 0.5);
+  }
+  .home-cta-section {
+    padding: 56px 0;
+    border-top: 1px solid var(--border-subtle);
+  }
+  .home-eyebrow {
+    color: var(--glow-blue);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .home-title {
+    color: var(--text-100);
+    font-size: clamp(2.55rem, 4.4vw, 4.35rem);
+    font-weight: 850;
+    line-height: 1.04;
+  }
+  .home-sub,
+  .home-section-sub {
+    color: var(--text-300);
+    font-size: 1.2rem;
+    line-height: 1.65;
+  }
+  .home-sub {
+    max-width: 820px;
+    color: var(--text-200);
+    font-size: 1.3rem;
+  }
+  .home-section-title {
+    color: var(--text-100);
+    font-size: clamp(2rem, 3.4vw, 3rem);
+    font-weight: 820;
+    line-height: 1.1;
+  }
+  .home-proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .home-proof span {
+    border: 1px solid rgba(125, 140, 210, 0.28);
+    border-radius: 999px;
+    background: rgba(18, 22, 40, 0.72);
+    color: var(--text-200);
+    padding: 8px 12px;
+    font-weight: 750;
+  }
+  .home-console,
+  .home-card,
+  .home-module,
+  .home-cta,
+  .home-steps div,
+  .home-compare,
+  .home-calculator {
+    border: 1px solid var(--border-subtle);
+    background: var(--surface-1);
+    box-shadow: 0 16px 34px rgba(6, 10, 20, 0.5);
+  }
+  .home-console {
+    border-color: var(--border-strong);
+    border-radius: 22px;
+    padding: 28px;
+    background:
+      linear-gradient(180deg, rgba(20, 24, 45, 0.96), rgba(10, 13, 26, 0.96)),
+      url("{% static 'assets/images/heroimage.jpg' %}");
+    background-size: cover;
+    background-blend-mode: multiply;
+  }
+  .home-console-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .home-console-top p,
+  .home-card-label,
+  .home-domain-grid p,
+  .home-module span {
+    color: var(--text-400);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .home-console-top h2 {
+    color: var(--text-100);
+    font-size: 1.85rem;
+    font-weight: 850;
+  }
+  .home-console-top > span {
+    border: 1px solid rgba(90, 215, 255, 0.48);
+    border-radius: 999px;
+    color: var(--glow-blue);
+    padding: 7px 12px;
+    font-weight: 800;
+  }
+  .home-domain-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .home-domain-grid > div,
+  .home-action-card {
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    background: rgba(10, 13, 26, 0.72);
+    padding: 16px;
+  }
+  .home-domain-grid .is-active,
+  .home-card.is-accent {
+    background: linear-gradient(135deg, rgba(92, 110, 255, 0.28), rgba(90, 215, 255, 0.12));
+  }
+  .home-domain-grid strong {
+    display: block;
+    color: var(--text-100);
+    font-size: 2.1rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-top: 10px;
+  }
+  .home-domain-grid span,
+  .home-card p,
+  .home-module p,
+  .home-module strong,
+  .home-action-card p,
+  .home-steps span,
+  .home-cta p:not(.home-eyebrow) {
+    color: var(--text-300);
+  }
+  .home-module strong {
+    display: block;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-top: 16px;
+  }
+  .home-action-card {
+    margin-top: 18px;
+  }
+  .home-action-card h3,
+  .home-card h3,
+  .home-module h3 {
+    color: var(--text-100);
+    font-weight: 850;
+  }
+  .home-action-card h3 {
+    font-size: 1.2rem;
+    margin-top: 8px;
+  }
+  .home-flow {
+    display: grid;
+    grid-template-columns: auto 1fr auto 1fr auto;
+    align-items: center;
+    gap: 10px;
+    margin: 18px 0;
+  }
+  .home-flow span {
+    border: 1px solid rgba(90, 215, 255, 0.35);
+    border-radius: 999px;
+    color: var(--text-100);
+    padding: 7px 10px;
+    font-size: 0.85rem;
+    font-weight: 800;
+  }
+  .home-flow i {
+    height: 1px;
+    background: linear-gradient(90deg, var(--glow-indigo), var(--glow-blue));
+  }
+  .home-card,
+  .home-module {
+    display: block;
+    border-radius: 16px;
+    padding: 24px;
+  }
+  .home-card h3,
+  .home-module h3 {
+    font-size: 1.18rem;
+    margin-bottom: 10px;
+  }
+  .home-card {
+    min-height: 100%;
+    box-shadow: 0 10px 22px rgba(6, 10, 20, 0.38);
+  }
+  .home-module {
+    min-height: 340px;
+    transition: transform 160ms ease, border-color 160ms ease;
+  }
+  .home-module:hover {
+    transform: translateY(-4px);
+    border-color: rgba(90, 215, 255, 0.42);
+  }
+  .home-module span {
+    display: block;
+    color: var(--glow-blue);
+    margin-bottom: 16px;
+  }
+  .home-steps {
+    display: grid;
+    gap: 14px;
+  }
+  .home-loop {
+    display: grid;
+    grid-template-columns: 0.55fr 1.45fr;
+    gap: 28px;
+    align-items: start;
+    border: 1px solid var(--border-subtle);
+    border-radius: 18px;
+    background: rgba(10, 13, 26, 0.42);
+    padding: 26px;
+  }
+  .home-loop h3 {
+    color: var(--text-100);
+    font-size: 1.35rem;
+    font-weight: 850;
+    line-height: 1.35;
+    margin-top: 10px;
+  }
+  .home-steps div {
+    display: grid;
+    grid-template-columns: 54px 1fr;
+    align-items: center;
+    gap: 16px;
+    border-radius: 14px;
+    padding: 18px;
+  }
+  .home-steps b {
+    color: var(--glow-blue);
+    font-size: 1.35rem;
+    font-weight: 900;
+  }
+  .home-impact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .home-impact-grid span {
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    background: var(--surface-1);
+    color: var(--text-200);
+    font-weight: 800;
+    padding: 16px;
+  }
+  .home-compare {
+    overflow: hidden;
+    border-radius: 18px;
+  }
+  .home-compare-head,
+  .home-compare > div:not(.home-compare-head) {
+    display: grid;
+    grid-template-columns: 0.8fr 1fr 1.25fr;
+    gap: 18px;
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .home-compare-head {
+    color: var(--glow-blue);
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .home-compare strong {
+    color: var(--text-100);
+    font-weight: 850;
+  }
+  .home-compare p {
+    color: var(--text-300);
+    line-height: 1.55;
+  }
+  .home-calculator {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
+    gap: 24px;
+    border-radius: 18px;
+    padding: 24px;
+  }
+  .home-calc-inputs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .home-calc-inputs label {
+    color: var(--text-300);
+    font-size: 0.92rem;
+    font-weight: 750;
+  }
+  .home-calc-inputs input {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    background: rgba(10, 13, 26, 0.86);
+    color: var(--text-100);
+    padding: 12px;
+  }
+  .home-calc-results {
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    background: rgba(10, 13, 26, 0.72);
+    padding: 20px;
+  }
+  .home-calc-results div {
+    display: grid;
+    gap: 6px;
+    margin-top: 18px;
+  }
+  .home-calc-results span,
+  .home-calc-results p,
+  .home-disclaimer {
+    color: var(--text-300);
+  }
+  .home-calc-results strong {
+    color: var(--text-100);
+    font-size: 1.7rem;
+    font-weight: 900;
+  }
+  .home-cta {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 32px;
+    border-radius: 22px;
+    padding: 34px;
+  }
+  .home-cta h2 {
+    color: var(--text-100);
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 850;
+    line-height: 1.12;
+    margin-top: 10px;
+  }
+  .home-cta p:not(.home-eyebrow) {
+    font-size: 1.1rem;
+    line-height: 1.65;
+    margin-top: 14px;
+  }
+  @media (max-width: 991px) {
+    .home-cta,
+    .home-loop,
+    .home-calculator {
+      grid-template-columns: 1fr;
+    }
+    .home-compare-head,
+    .home-compare > div:not(.home-compare-head) {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 768px) {
+    .home-domain-grid,
+    .home-flow,
+    .home-impact-grid,
+    .home-calc-inputs {
+      grid-template-columns: 1fr;
+    }
+    .home-flow i {
+      height: 18px;
+      width: 1px;
+      justify-self: center;
+    }
+  }
+  @media (max-width: 640px) {
+    .home-section { padding: 64px 0; }
+    .home-domain-strip,
+    .home-cta-section { padding: 44px 0; }
+    .home-sub,
+    .home-section-sub { font-size: 1.1rem; }
+    .home-console { padding: 20px; }
+    .home-module { min-height: auto; }
+  }
+</style>
+{% endblock content %}

@@ -1,0 +1,78 @@
+{% extends "mainbase.html" %}
+{% load static %}
+
+{% block header %}{% endblock %}
+{% block footer %}{% endblock %}
+
+{% block meta %}
+<title>Admin Verification | AAPPLIFY</title>
+<meta name="robots" content="noindex,nofollow">
+{% endblock %}
+
+{% block content %}
+<section style="min-height: 100vh; background: #0b1024; padding: 40px 20px; color: #f8fbff;">
+    <div style="max-width: 900px; margin: 0 auto;">
+        <div style="margin-bottom: 32px; display: flex; align-items: center; gap: 18px;">
+            <img src="{% static 'assets/images/company_logo/aapplify_logo.svg' %}" alt="AAPPLIFY" style="width: 210px; height: auto; display: block;">
+            <div>
+                <p style="margin: 0; color: #35d8ff; font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;">Admin console</p>
+                <h1 style="margin: 4px 0 0; color: #ffffff; font-size: 34px; font-weight: 800;">Admin verification</h1>
+            </div>
+        </div>
+
+        <div style="background: #11172d; padding: 42px; border: 1px solid #5f6f95; box-shadow: 0 24px 80px rgba(0,0,0,.28);">
+            {% if setup_required %}
+                <h2 style="margin: 0; color: #ffffff; font-size: 30px; font-weight: 800;">Set up Microsoft Authenticator</h2>
+                <ol style="margin: 26px 0 0; padding-left: 24px; color: #d9e6ff; font-size: 18px; line-height: 1.8;">
+                    <li>Open Microsoft Authenticator on your phone.</li>
+                    <li>Tap <strong style="color: #ffffff;">+</strong>, then choose <strong style="color: #ffffff;">Other account</strong>.</li>
+                    <li>Choose manual setup, then enter this setup key.</li>
+                    <li>Enter the 6-digit code shown in the app.</li>
+                </ol>
+
+                <div style="margin-top: 30px; background: #081026; padding: 24px; border: 1px solid #8ca4d6;">
+                    <label style="color: #9fc7ff; font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;">Setup key</label>
+                    <div style="margin-top: 12px; user-select: all; word-break: break-word; background: #ffffff; padding: 18px; color: #071126; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 22px; font-weight: 800; letter-spacing: .08em; border: 1px solid #cbd5e1;">
+                        {{ formatted_totp_secret }}
+                    </div>
+                    <p style="margin: 14px 0 0; color: #d9e6ff; font-size: 15px;">Account name: {{ request.user.email }}</p>
+                    <p style="margin: 4px 0 0; color: #d9e6ff; font-size: 15px;">Type: time based</p>
+                </div>
+            {% else %}
+                <h2 style="margin: 0; color: #ffffff; font-size: 30px; font-weight: 800;">Enter your authenticator code</h2>
+                <p style="margin: 16px 0 0; color: #d9e6ff; font-size: 18px; line-height: 1.7;">Open Microsoft Authenticator and enter the current 6-digit code for {{ request.user.email }}.</p>
+            {% endif %}
+
+            {% if messages %}
+                {% for message in messages %}
+                    <p style="margin-top: 20px; background: #fee2e2; padding: 12px; color: #991b1b; border: 1px solid #fecaca;">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+
+            <form method="post" style="margin-top: 34px;">
+                {% csrf_token %}
+                {% if form.non_field_errors %}
+                    <div style="margin-bottom: 20px; background: #fee2e2; padding: 12px; color: #991b1b; border: 1px solid #fecaca;">{{ form.non_field_errors }}</div>
+                {% endif %}
+
+                <label style="color: #9fc7ff; font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;" for="{{ form.code.id_for_label }}">Verification code</label>
+                <input
+                    style="box-sizing: border-box; margin-top: 12px; width: 100%; background: #ffffff; padding: 18px; color: #071126; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 28px; font-weight: 800; letter-spacing: .35em; border: 2px solid #9fc7ff; outline: none;"
+                    id="{{ form.code.id_for_label }}"
+                    inputmode="numeric"
+                    maxlength="6"
+                    minlength="6"
+                    name="{{ form.code.html_name }}"
+                    autocomplete="one-time-code"
+                    type="text"
+                >
+                {% if form.code.errors %}
+                    <p style="margin-top: 10px; color: #fecaca; font-size: 14px;">{{ form.code.errors }}</p>
+                {% endif %}
+
+                <button style="margin-top: 24px; width: 100%; background: linear-gradient(135deg, #16f3de, #7257ff); padding: 18px 20px; color: #ffffff; font-size: 20px; font-weight: 800; border: 0; cursor: pointer;" type="submit">Verify</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -4,9 +4,6 @@ cd ..
 source django/bin/activate
 cd aapplify
 
-MPATffy6SesjTdl
-
-
 <div class="flex h-screen overflow-hidden">
         <!-- Sidebar -->
         <div class="w-1/4 bg-white border-r border-gray-300">

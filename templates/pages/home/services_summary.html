@@ -1,0 +1,36 @@
+{% load static %}
+<section class="py-16 bg-gradient-to-br from-slate-50 to-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-extrabold text-center text-primary_c mb-10">Our Services</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Custom AI Solutions -->
+      <div class="bg-white rounded-xl shadow p-8 flex flex-col hover:shadow-lg transition">
+        <img src="{% static 'assets/images/intro4.webp' %}" alt="Custom AI Solutions" class="w-full h-40 object-cover rounded mb-4">
+        <h3 class="text-xl font-bold text-blue-800 mb-2">Custom AI Solutions</h3>
+        <p class="text-gray-700 mb-4">Tailored AI solutions to meet your business needs and boost efficiency.</p>
+        <a href="/services/" class="text-blue-700 font-semibold hover:underline">Learn more</a>
+      </div>
+      <!-- Data Analytics Insights -->
+      <div class="bg-white rounded-xl shadow p-8 flex flex-col hover:shadow-lg transition">
+        <img src="{% static 'assets/images/intro3.webp' %}" alt="Data Analytics Insights" class="w-full h-40 object-cover rounded mb-4">
+        <h3 class="text-xl font-bold text-blue-800 mb-2">Data Analytics Insights</h3>
+        <p class="text-gray-700 mb-4">Deep data insights to help you make informed business decisions.</p>
+        <a href="/services/" class="text-blue-700 font-semibold hover:underline">Learn more</a>
+      </div>
+      <!-- AI Training Programs -->
+      <div class="bg-white rounded-xl shadow p-8 flex flex-col hover:shadow-lg transition">
+        <img src="{% static 'assets/images/intro2.webp' %}" alt="AI Training Programs" class="w-full h-40 object-cover rounded mb-4">
+        <h3 class="text-xl font-bold text-blue-800 mb-2">AI Training Programs</h3>
+        <p class="text-gray-700 mb-4">Comprehensive AI training programs to upskill your team effectively.</p>
+        <a href="/services/" class="text-blue-700 font-semibold hover:underline">Learn more</a>
+      </div>
+      <!-- AI Integration Support -->
+      <div class="bg-white rounded-xl shadow p-8 flex flex-col hover:shadow-lg transition">
+        <img src="{% static 'assets/images/intro1.webp' %}" alt="AI Integration Support" class="w-full h-40 object-cover rounded mb-4">
+        <h3 class="text-xl font-bold text-blue-800 mb-2">AI Integration Support</h3>
+        <p class="text-gray-700 mb-4">Seamless integration of AI technologies into your existing systems.</p>
+        <a href="/services/" class="text-blue-700 font-semibold hover:underline">Learn more</a>
+      </div>
+    </div>
+  </div>
+</section>

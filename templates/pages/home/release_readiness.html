@@ -1,0 +1,293 @@
+{% load static %}
+
+<style>
+  .faq .answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease;
+  }
+  .faq.active .answer {
+    max-height: 260px;
+  }
+</style>
+
+<section class="relative overflow-hidden py-20 bg-gradient-to-br from-blue-50 to-white">
+  <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+    <div class="hero-part1">
+      <p class="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-primary_c shadow-sm">
+        AI-agent production readiness
+      </p>
+      <h1 class="text-5xl md:text-6xl font-extrabold text-blue-900 mt-6 mb-6 leading-tight">
+        Approve, hold, remediate, or except AI agents before production.
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-700 mb-8">
+        Validate agent ownership, identity scope, tool access, API permissions, data reach, security exposure, release approval, and required evidence before an AI agent enters production workflows.
+      </p>
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="{% url 'request_demo' %}" class="btn-primary px-6 py-3 rounded-lg font-bold text-lg transition">
+          Assess agent production readiness
+        </a>
+        <a href="{% url 'main_home' %}#roi" class="btn-secondary px-6 py-3 rounded-lg font-semibold text-lg">
+          Estimate manual effort reduction
+        </a>
+      </div>
+      <p class="mt-4 text-sm text-gray-600">Start with agent production readiness, then extend the same control assurance model to risky access, sensitive data, cloud remediation, and third-party activity.</p>
+    </div>
+
+    <div class="hero-part2 relative">
+      <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-lg">
+        <div class="flex items-center justify-between">
+          <p class="text-xs uppercase tracking-widest text-gray-500">Agent readiness workflow</p>
+          <span class="px-3 py-1 text-xs font-semibold rounded-full border border-primary_c text-primary_c">Hold</span>
+        </div>
+        <h3 class="text-2xl font-bold text-blue-900 mt-3">FinanceOps agent deployment</h3>
+        <p class="text-gray-600 mt-2">The agent can call billing APIs, update customer records, and run through a service account in production.</p>
+        <div class="mt-4 grid grid-cols-2 gap-4 text-sm text-gray-700">
+          <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+            <p class="text-xs uppercase text-gray-500">Identity</p>
+            <p class="font-semibold">Scope too broad</p>
+          </div>
+          <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+            <p class="text-xs uppercase text-gray-500">Tools</p>
+            <p class="font-semibold">Billing API</p>
+          </div>
+          <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+            <p class="text-xs uppercase text-gray-500">Data</p>
+            <p class="font-semibold">Customer PII reachable</p>
+          </div>
+          <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+            <p class="text-xs uppercase text-gray-500">Exception</p>
+            <p class="font-semibold">Expiration missing</p>
+          </div>
+        </div>
+        <div class="mt-6 flex items-center gap-4">
+          <div class="text-4xl font-extrabold text-primary_c">68</div>
+          <div class="text-sm text-gray-600">
+            Agent readiness score<br />
+            <span class="text-gray-500">Top drivers: excessive scope, sensitive data reach, missing exception evidence</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-12 bg-white border-t border-gray-200">
+  <div class="container mx-auto px-4">
+    <div class="grid lg:grid-cols-[0.65fr_1.35fr] gap-8 items-start">
+      <div>
+        <p class="text-sm font-semibold text-primary_c uppercase tracking-[0.2em]">Where this fits</p>
+        <h2 class="text-3xl font-bold text-blue-900 mt-3">Agent production readiness proves autonomous workflows are safe to deploy.</h2>
+        <p class="text-gray-700 mt-3">Use it for agent deployment decisions, then extend the same evidence workflow across identity, data, and security.</p>
+      </div>
+      <div class="grid md:grid-cols-4 gap-4">
+        <a href="{% url 'landing_release_readiness' %}" class="rounded-xl border border-primary_c bg-blue-50 p-5 block hover:shadow transition">
+          <p class="text-sm font-semibold text-primary_c uppercase">Change</p>
+          <h3 class="font-bold text-blue-900 mt-2">Agent production readiness</h3>
+          <p class="text-gray-700 text-sm mt-2">Approve, hold, remediate, or except AI agents before production.</p>
+        </a>
+        <a href="{% url 'landing_identity' %}" class="rounded-xl border border-gray-200 bg-white p-5 block hover:shadow transition">
+          <p class="text-sm font-semibold text-primary_c uppercase">Identity</p>
+          <h3 class="font-bold text-blue-900 mt-2">Agent access assurance</h3>
+          <p class="text-gray-700 text-sm mt-2">Review agent identities, service accounts, and risky grants.</p>
+        </a>
+        <a href="{% url 'landing_data' %}" class="rounded-xl border border-gray-200 bg-white p-5 block hover:shadow transition">
+          <p class="text-sm font-semibold text-primary_c uppercase">Data</p>
+          <h3 class="font-bold text-blue-900 mt-2">Agent data assurance</h3>
+          <p class="text-gray-700 text-sm mt-2">Map agent sensitive-data reach to policy and controls.</p>
+        </a>
+        <a href="{% url 'landing_security' %}" class="rounded-xl border border-gray-200 bg-white p-5 block hover:shadow transition">
+          <p class="text-sm font-semibold text-primary_c uppercase">Security</p>
+          <h3 class="font-bold text-blue-900 mt-2">Agent remediation evidence</h3>
+          <p class="text-gray-700 text-sm mt-2">Connect risky findings to remediation proof.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Built for the teams that carry the agent deployment decision.</h2>
+      <p class="text-lg text-gray-700">AAPPLIFY gives security, identity, data, platform, and compliance teams one evidence workflow for deciding whether an agent can move into production.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 mt-10">
+      <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <p class="text-sm font-semibold text-primary_c uppercase tracking-[0.2em]">Security</p>
+        <h3 class="text-xl font-bold text-blue-900 mt-3">Security and assurance leaders</h3>
+        <p class="text-gray-700 mt-3">See whether agent risks, security findings, and compensating controls are closed before production use.</p>
+      </div>
+      <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <p class="text-sm font-semibold text-primary_c uppercase tracking-[0.2em]">Identity</p>
+        <h3 class="text-xl font-bold text-blue-900 mt-3">Identity governance teams</h3>
+        <p class="text-gray-700 mt-3">Validate service accounts, delegated access, API tokens, privileged roles, and expiration requirements.</p>
+      </div>
+      <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <p class="text-sm font-semibold text-primary_c uppercase tracking-[0.2em]">Data</p>
+        <h3 class="text-xl font-bold text-blue-900 mt-3">Data and compliance owners</h3>
+        <p class="text-gray-700 mt-3">Confirm sensitive-data reach, privacy review, owner approval, retention obligations, and evidence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-gradient-to-br from-slate-50 to-white">
+  <div class="container mx-auto px-4 grid md:grid-cols-2 gap-10 items-start">
+    <div>
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Agent deployment risk is scattered across systems.</h2>
+      <p class="text-lg text-gray-700">
+        An agent deployment may pass functional tests while its identity scope, tool access, data reach, exception status, or remediation evidence is still incomplete.
+      </p>
+    </div>
+    <div class="rounded-2xl border border-gray-200 bg-white p-8 shadow">
+      <h3 class="text-2xl font-bold text-blue-900 mb-3">One production decision with evidence.</h3>
+      <p class="text-gray-700">
+        AAPPLIFY brings the agent context together and turns it into an explainable approve, hold, remediate, or exception decision with linked control evidence.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="product" class="py-16">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">How the workflow works</h2>
+      <p class="text-lg text-gray-700">Start with the systems you already use, then create a production-readiness record for the agent and the controls it must satisfy.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-10">
+      <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <p class="text-sm text-primary_c font-semibold">Step 1</p>
+        <h3 class="text-lg font-bold text-blue-900 mb-2">Connect context</h3>
+        <p class="text-gray-700">Bring in agent inventory, identity records, tool access, data context, findings, tickets, and release metadata.</p>
+      </div>
+      <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <p class="text-sm text-primary_c font-semibold">Step 2</p>
+        <h3 class="text-lg font-bold text-blue-900 mb-2">Map the agent</h3>
+        <p class="text-gray-700">Link owner, identity scope, API permissions, data reach, environment, policy, and exception status.</p>
+      </div>
+      <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <p class="text-sm text-primary_c font-semibold">Step 3</p>
+        <h3 class="text-lg font-bold text-blue-900 mb-2">Decide and route</h3>
+        <p class="text-gray-700">Determine whether the agent should proceed, hold, require remediation, or receive exception approval.</p>
+      </div>
+      <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <p class="text-sm text-primary_c font-semibold">Step 4</p>
+        <h3 class="text-lg font-bold text-blue-900 mb-2">Preserve proof</h3>
+        <p class="text-gray-700">Capture policy, approval, remediation, exception, expiration, and closure evidence for audit review.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-gradient-to-br from-gray-50 to-white">
+  <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+    <div>
+      <p class="text-sm font-semibold text-primary_c uppercase tracking-[0.2em]">Agent deployment paths</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mt-4 mb-4">One agent deployment, many control questions.</h2>
+      <p class="text-lg text-gray-700">
+        A production agent often spans orchestration code, service accounts, APIs, cloud roles, SaaS permissions, data systems, and workflow tools. AAPPLIFY keeps the approval decision anchored to the whole control picture.
+      </p>
+      <ul class="mt-6 space-y-3 text-gray-700">
+        <li>Track readiness by agent, workflow, owner, and production environment.</li>
+        <li>See which identity, data, tool, or exception issue is driving the hold decision.</li>
+        <li>Keep agent review evidence together instead of stitching tickets and screenshots by hand.</li>
+      </ul>
+    </div>
+    <div class="rounded-2xl border border-gray-200 bg-white p-8 shadow-lg">
+      <div class="grid grid-cols-2 gap-4">
+        <div class="rounded-xl bg-blue-50 p-4">
+          <p class="text-xs uppercase tracking-widest text-gray-500">Identity</p>
+          <p class="text-lg font-bold text-blue-900 mt-2">Service account</p>
+        </div>
+        <div class="rounded-xl bg-blue-50 p-4">
+          <p class="text-xs uppercase tracking-widest text-gray-500">Tool access</p>
+          <p class="text-lg font-bold text-blue-900 mt-2">Billing API</p>
+        </div>
+        <div class="rounded-xl bg-blue-50 p-4">
+          <p class="text-xs uppercase tracking-widest text-gray-500">Data reach</p>
+          <p class="text-lg font-bold text-blue-900 mt-2">Customer PII</p>
+        </div>
+        <div class="rounded-xl bg-blue-50 p-4">
+          <p class="text-xs uppercase tracking-widest text-gray-500">Decision</p>
+          <p class="text-lg font-bold text-blue-900 mt-2">Hold pending evidence</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="integrations" class="py-16">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Designed to fit the systems agents already use.</h2>
+      <p class="text-lg text-gray-700">AAPPLIFY can be configured around the identity, data, security, workflow, and release systems involved in one agent production-readiness workflow.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+      <div class="rounded-xl border border-gray-200 bg-white p-6">
+        <h3 class="text-lg font-bold text-blue-900 mb-2">Identity and access</h3>
+        <p class="text-gray-700">Agent identity, service accounts, groups, roles, tokens, permissions, and ownership records.</p>
+      </div>
+      <div class="rounded-xl border border-gray-200 bg-white p-6">
+        <h3 class="text-lg font-bold text-blue-900 mb-2">Data and tools</h3>
+        <p class="text-gray-700">Sensitive-data context, tool access, API calls, SaaS permissions, and data-owner approval paths.</p>
+      </div>
+      <div class="rounded-xl border border-gray-200 bg-white p-6">
+        <h3 class="text-lg font-bold text-blue-900 mb-2">Security and change</h3>
+        <p class="text-gray-700">Findings, exposure paths, remediation tasks, release approvals, exceptions, and evidence requests.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-gradient-to-br from-slate-50 to-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl">
+      <p class="text-sm font-semibold text-primary_c uppercase tracking-[0.2em]">Focused pilot</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mt-4 mb-4">Validate one agent control workflow before expanding.</h2>
+      <p class="text-lg text-gray-700">Focused pilots are scoped around a small set of systems and recent agent or release workflows so teams can validate signal quality, evidence value, and control fit before expanding.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 mt-10">
+      <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <h3 class="text-xl font-bold text-blue-900">Narrow workflow</h3>
+        <p class="text-gray-700 mt-3">Start with one agent deployment, tool-access change, data-access workflow, or exception cleanup.</p>
+      </div>
+      <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <h3 class="text-xl font-bold text-blue-900">Small system set</h3>
+        <p class="text-gray-700 mt-3">Map only the systems needed to validate ownership, scope, policy, remediation, and evidence value.</p>
+      </div>
+      <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <h3 class="text-xl font-bold text-blue-900">Evidence review</h3>
+        <p class="text-gray-700 mt-3">Compare the control record against the evidence security, risk, audit, and data owners need.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="demo" class="py-16">
+  <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+    <div>
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Review an agent production workflow.</h2>
+      <p class="text-lg text-gray-700 mb-6">
+        Walk through one agent deployment and identify the ownership, identity scope, data reach, exception status, remediation path, and evidence needed before production use.
+      </p>
+      <a href="{% url 'request_demo' %}" class="btn-secondary px-6 py-3 rounded-lg font-semibold">Assess agent production readiness</a>
+    </div>
+    <div class="rounded-2xl border border-gray-200 bg-white p-4 shadow-lg">
+      <img src="{% static 'assets/images/heroimage.jpg' %}" alt="AAPPLIFY agent production readiness workflow" class="rounded-xl w-full" />
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-gradient-to-br from-gray-50 to-white">
+  <div class="container mx-auto px-4">
+    <div class="rounded-2xl border border-gray-200 bg-white p-10 text-center shadow">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Control agent risk before production exposure.</h2>
+      <p class="text-lg text-gray-700 mb-8">Map one agent workflow and see where ownership, scope, approval, remediation, exception, or audit evidence is missing.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="{% url 'request_demo' %}" class="btn-primary px-6 py-3 rounded-lg font-semibold">Map one agent control workflow</a>
+        <a href="{% url 'main_about' %}" class="btn-secondary px-6 py-3 rounded-lg font-semibold">Why AAPPLIFY</a>
+      </div>
+    </div>
+  </div>
+</section>

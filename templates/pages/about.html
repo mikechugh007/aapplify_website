@@ -1,0 +1,105 @@
+{% extends "mainbase.html" %}
+{% load static %}
+
+{% block content %}
+<section class="py-20 bg-gradient-to-br from-blue-50 to-white">
+    <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+            <p class="text-sm font-semibold text-primary_c uppercase tracking-[0.2em]">Why AAPPLIFY</p>
+            <h1 class="text-5xl md:text-6xl font-extrabold text-blue-900 mt-4 mb-6">Built to prove AI-agent actions were controlled.</h1>
+            <p class="text-xl text-gray-700">
+                AAPPLIFY exists because AI agents are becoming enterprise actors, but the control evidence around their access, data use, tool calls, exceptions, and remediation is scattered across identity, security, data, change, and workflow systems.
+            </p>
+        </div>
+        <div class="rounded-2xl overflow-hidden border border-gray-200 shadow-lg bg-white">
+            <img class="w-full h-full object-cover" src="{% static 'assets/images/about.webp' %}" alt="AAPPLIFY AI Agent Control Assurance team">
+        </div>
+    </div>
+</section>
+
+<section class="py-16">
+    <div class="container mx-auto px-4 max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Why we exist</h2>
+        <p class="text-lg text-gray-700">
+            Most teams already have alerts, tickets, policies, scanners, identity systems, workflow tools, and GRC programs. What they lack is consistent proof that the right controls operated at the right time for AI agents, automations, and delegated identities. AAPPLIFY starts there, then extends the same evidence model to risky access, data movement, cloud exposure, production change, and third-party activity.
+        </p>
+    </div>
+</section>
+
+<section class="py-16 bg-gradient-to-br from-slate-50 to-white">
+    <div class="container mx-auto px-4">
+        <div class="max-w-3xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">What we believe</h2>
+            <p class="text-lg text-gray-700">The operating principles behind the product are practical on purpose.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+            <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+                <h3 class="text-xl font-bold text-blue-900">Context before automation</h3>
+                <p class="text-gray-700 mt-3">Workflows should be triggered by evidence, ownership, policy, and control context, not by isolated alerts.</p>
+            </div>
+            <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+                <h3 class="text-xl font-bold text-blue-900">Team focus, shared evidence</h3>
+                <p class="text-gray-700 mt-3">Security, identity, data, compliance, and platform teams need workflows that match their ownership without losing a common evidence record.</p>
+            </div>
+            <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+                <h3 class="text-xl font-bold text-blue-900">Controls by design</h3>
+                <p class="text-gray-700 mt-3">Policies, approvals, guardrails, and audit evidence should be part of the operating model from the start.</p>
+            </div>
+            <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+                <h3 class="text-xl font-bold text-blue-900">Use the systems teams trust</h3>
+                <p class="text-gray-700 mt-3">AAPPLIFY connects existing tools and files instead of asking teams to replace every workflow on day one.</p>
+            </div>
+            <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+                <h3 class="text-xl font-bold text-blue-900">Fast time to value</h3>
+                <p class="text-gray-700 mt-3">The first job is to prove value around one high-priority risk workflow, then expand by department or control area.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-16">
+    <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-start">
+        <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Who we build for</h2>
+            <ul class="space-y-4 text-lg text-gray-700">
+                <li>Security teams that need AI-agent exposure, posture, and remediation signals connected to action.</li>
+                <li>Identity teams that need to prove agent access was owned, scoped, approved, and time-bound.</li>
+                <li>Data and compliance teams that need policy-aware evidence for AI-agent access to sensitive data.</li>
+                <li>Platform, release, and application teams that need agent production readiness tied to controls and ownership.</li>
+            </ul>
+        </div>
+        <div class="rounded-2xl border border-gray-200 bg-white p-8 shadow">
+            <h2 class="text-3xl font-bold text-blue-900 mb-4">What customers can expect</h2>
+            <p class="text-gray-700">
+                We start with a focused pilot around one AI-agent control workflow: the systems that create the signal, the owners who make the decision, the remediation or exception path, and the evidence needed to prove control.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="py-16 bg-gradient-to-br from-gray-50 to-white">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Team</h2>
+                <p class="text-lg text-gray-700 max-w-3xl">AAPPLIFY is built by a small team focused on AI Agent Control Assurance and the broader evidence model for high-risk enterprise actions.</p>
+            </div>
+            <a href="{% url 'about_team' %}" class="btn-secondary px-6 py-3 rounded-lg font-semibold">Meet the team</a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6 mt-10">
+            <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+                <h3 class="text-xl font-bold text-blue-900">Product direction</h3>
+                <p class="text-gray-700 mt-3">Focused on risk signal to control outcome: context, policy decision, workflow, remediation or exception, and evidence.</p>
+            </div>
+            <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+                <h3 class="text-xl font-bold text-blue-900">Pilot delivery</h3>
+                <p class="text-gray-700 mt-3">Scoped around one risk workflow so teams can prove value quickly before expanding rollout.</p>
+            </div>
+            <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+                <h3 class="text-xl font-bold text-blue-900">Platform buildout</h3>
+                <p class="text-gray-700 mt-3">Centered on reliable ingestion, reusable context, governed workflows, policy processing, and audit evidence.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

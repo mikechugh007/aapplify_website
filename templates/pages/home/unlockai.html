@@ -1,0 +1,60 @@
+{% load static %}
+
+<style>
+  .scroller[data-animated="true"] {
+    overflow: hidden;
+    -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  }
+
+  .scroller[data-animated="true"] .scroller_inner {
+    flex-wrap: nowrap;
+    animation: scroll 40s linear infinite;
+    width: max-content;
+  }
+
+  @keyframes scroll {
+    to{
+      transform: translate(calc(-50% - 5rem));
+    }
+  }
+</style>
+
+<section class="unlockai">
+  <div class="container grid gap-8">
+      <div class="max-w-[900px] grid gap-10">
+          <h1 class="lg:text-7xl text-5xl font-bold pt-36">
+                Outcomes in hours, not quarters
+          </h1>
+          <p class="text-3xl">
+                AAPPLIFY delivers plug-and-play connectors, AI prioritization, and workflow automation so teams can ship fixes and decisions fast—without a multi-month integration program.
+          </p>
+      </div>
+    <div class="rounded-md">
+      <img
+        src="{% static 'assets/images/heroimage.jpg' %}"
+        alt="Hero Image"
+        class=""
+      />
+    </div>
+  </div>
+  <div class="scroller pt-40 max-w-full overflow-hidden">
+    <ul class="scroller_inner flex flex-wrap gap-x-40">
+      <li class="flex-shrink-0">
+        <img class="scroller-logo" src="{% static 'assets/images/company_logo/logo1.png' %}" alt="Logo 1" />
+      </li>
+      <li class="flex-shrink-0">
+        <img class="scroller-logo" src="{% static 'assets/images/company_logo/logo2.png' %}" alt="Logo 2" />
+      </li>
+      <li class="flex-shrink-0">
+        <img class="scroller-logo" src="{% static 'assets/images/company_logo/logo3.png' %}" alt="Logo 3" />
+      </li>
+      <li class="flex-shrink-0">
+        <img class="scroller-logo" src="{% static 'assets/images/company_logo/logo4.png' %}" alt="Logo 4" />
+      </li>
+      <li class="flex-shrink-0">
+        <img class="scroller-logo" src="{% static 'assets/images/company_logo/logo5.png' %}" alt="Logo 5" />
+      </li>
+    </ul>
+  </div>
+</section>

@@ -1,17 +1,49 @@
-*.pyc
+# Python
+__pycache__/
+*.py[cod]
 *.pyo
 *.pyd
-__pycache__/
-**/__pycache__/
-**/migrations/
+*.pyc
+
+# Django
 *.log
 *.pot
-db.sqlite3
-.DS_Store
-**/.DS_Store
-venv/
+*.pyc
+*.mo
+*.sqlite3
+*.db
+*.db-journal
+
+# Environments
 .env
+.env.*
+!.env.example
+venv/
+env/
+ENV/
+
+# VSCode
 .vscode/
-Dockerfile
-docker-compose.yml
-.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# User uploads / generated static output
+/media/
+/staticfiles/
+
+# Node
+node_modules/
+
+# Other
+*.bak
+*.swp
+*.swo
+
+# Migrations
+*/migrations/*.pyc
+*/migrations/*.pyo
+*/migrations/*.db
+*/migrations/*.sqlite3
+!*/migrations/__init__.py

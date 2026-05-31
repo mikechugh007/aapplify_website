@@ -1,0 +1,39 @@
+{% extends "mainbase.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="text-center grid grid-cols-5 gap-20 min-h-screen border-b">
+    <div class="col-span-2 flex flex-col justify-center items-center gap-5 bg-yellow-50">
+        <h1 class="text-5xl font-bold">Create An Account</h1>
+        <p class="text-lg">Please enter user information to create an account</p>
+        <a href="{% url 'auth_register' %}" class="bg-blue-500 text-white px-10 py-4 text-lg rounded-lg">Register</a>
+    </div>
+
+    <div class="col-span-3 flex flex-col gap-5 justify-center py-36 pr-16">
+        <h1 class="text-5xl font-bold text-center">Login Account</h1>
+        <p class="text-lg text-center">Use your email password for login</p>
+
+        <form method="post" action="{% url 'auth_login' %}" class="flex flex-col items-start gap-5 mx-auto w-[480px]">
+            {% csrf_token %}
+            <p class="text-red-600">{{ login_form.non_field_errors }}</p>
+            <div class="flex flex-col gap-2 items-start justify-center w-full">
+                <label class="text-xl" for="{{ login_form.email.id_for_label }}">Email</label>
+                {{ login_form.email }}
+                <p class="text-red-600">{{ login_form.email.errors }}</p>
+            </div>
+            <div class="flex flex-col gap-2 items-start justify-center w-full">
+                <label class="text-xl" for="{{ login_form.password.id_for_label }}">Password</label>
+                {{ login_form.password }}
+                <p class="text-red-600">{{ login_form.password.errors }}</p>
+            </div>
+            <!-- Forgot Password Link -->
+            <div class="flex justify-end w-full">
+                <a href="{% url 'password_reset' %}" class="text-blue-500 hover:underline">Forgot Password?</a>
+            </div>
+            <input class="w-full py-4 bg-blue-800 text-white text-xl mt-4" type="submit" value="Login">
+        </form>
+    </div>
+</section>
+
+{% endblock content %}
